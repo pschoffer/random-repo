@@ -1,7 +1,6 @@
 html, body {
     background-color: #4CAF50;
     margin: 0px;
-    height: 100%;
 }
 
 div.main {
@@ -74,4 +73,12 @@ ul.error {
     background-color: #EFA5A5;
     border: solid;
     border-color: #9C1010;
+}
+
+table.query-result{
+    padding-bottom: 10px;
+}
+
+table.query-result td {
+    vertical-align: top;
 }

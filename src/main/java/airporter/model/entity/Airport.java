@@ -1,13 +1,20 @@
 package airporter.model.entity;
 
+import airporter.model.JPANamedQuery;
+
 import javax.persistence.*;
-import java.io.Serializable;
 
 /**
  * Created by pavel on 1.4.17.
  */
 @Entity
 @Table(name = "airports")
+@NamedQueries({
+        @NamedQuery(
+                name = JPANamedQuery.SELECT_AIRPORT_BY_COUNTRY_CODE,
+                query = "from Airport where iso_country = :code"
+        )
+})
 public class Airport {
     @Id
     @Column(name = "id")

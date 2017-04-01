@@ -1,7 +1,9 @@
 package airporter.service;
 
-import airporter.model.entity.Country;
+import airporter.model.dao.AirportDAO;
 import airporter.model.dao.CountryDAO;
+import airporter.model.entity.Airport;
+import airporter.model.entity.Country;
 import airporter.service.dto.CountryAirports;
 import airporter.service.exception.CountryNotFoundException;
 import airporter.service.impl.QueryServiceImpl;
@@ -12,6 +14,10 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
+import java.util.List;
+
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
 /**
@@ -22,6 +28,8 @@ public class QueryServiceImplTest {
     private static final String NON_EXITING_COUNTRY = "BLA";
     @Mock
     private CountryDAO countryDAO;
+    @Mock
+    private AirportDAO airportDAO;
     @InjectMocks
     private final QueryService service = new QueryServiceImpl();
 
@@ -34,7 +42,11 @@ public class QueryServiceImplTest {
     @Test
     public void whenExistingCountry_thenReturnInformation() throws Exception {
         // prepare
-        when(countryDAO.getByCodeOrName(EXISTING_COUNTRY)).thenReturn(new Country());
+        final List<Airport> airports = Arrays.asList(new Airport());
+        final Country expectedCountry = new Country();
+        expectedCountry.setCode(EXISTING_COUNTRY);
+        when(countryDAO.getByCodeOrName(anyString())).thenReturn(expectedCountry);
+        when(airportDAO.findByCountryCode(anyString())).thenReturn(airports);
 
         // execute
         final CountryAirports countryAirports = service.getCountryAirports(EXISTING_COUNTRY);
@@ -42,6 +54,7 @@ public class QueryServiceImplTest {
         // assert
         final Country country = countryAirports.getCountry();
         Assert.assertNotNull(country);
+        Assert.assertEquals(countryAirports.getAirports(), airports);
     }
 
     @Test(expectedExceptions = CountryNotFoundException.class,

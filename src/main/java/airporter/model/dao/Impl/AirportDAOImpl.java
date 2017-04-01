@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 /**
@@ -23,7 +22,6 @@ public class AirportDAOImpl implements AirportDAO{
 
     @Override
     public List<Airport> findByCountryCode(final String code) {
-        final CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         final TypedQuery<Airport> namedQuery = entityManager.createNamedQuery(
                 JPANamedQuery.SELECT_AIRPORT_BY_COUNTRY_CODE, Airport.class);
         namedQuery.setParameter("code", code);

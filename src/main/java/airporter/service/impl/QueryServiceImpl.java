@@ -31,7 +31,7 @@ public class QueryServiceImpl implements QueryService {
             throw new CountryNotFoundException(msg);
         }
 
-        final List<Airport> airports = new ArrayList<>();
+        final List<Airport> airports = airportDAO.findByCountryCode(country.getCode());
         return new CountryAirports(country, airports);
     }
 }
