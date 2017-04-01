@@ -1,7 +1,7 @@
 package airporter.service;
 
 import airporter.model.entity.Country;
-import airporter.model.CountryDAO;
+import airporter.model.dao.CountryDAO;
 import airporter.service.exception.CountryNotFoundException;
 import airporter.service.impl.CountryServiceImpl;
 import org.mockito.InjectMocks;

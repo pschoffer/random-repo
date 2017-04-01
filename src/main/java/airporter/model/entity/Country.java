@@ -4,6 +4,8 @@ import airporter.model.JPANamedQuery;
 
 import javax.persistence.*;
 import javax.persistence.NamedQuery;
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by pavel on 31.3.17.

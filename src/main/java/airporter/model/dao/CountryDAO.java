@@ -1,4 +1,4 @@
-package airporter.model;
+package airporter.model.dao;
 
 import airporter.model.entity.Country;
 

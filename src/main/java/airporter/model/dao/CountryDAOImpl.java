@@ -1,5 +1,6 @@
-package airporter.model;
+package airporter.model.dao;
 
+import airporter.model.JPANamedQuery;
 import airporter.model.entity.Country;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

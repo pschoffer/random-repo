@@ -1,7 +1,7 @@
 package airporter.service.impl;
 
 import airporter.model.entity.Country;
-import airporter.model.CountryDAO;
+import airporter.model.dao.CountryDAO;
 import airporter.service.CountryService;
 import airporter.service.exception.CountryNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;

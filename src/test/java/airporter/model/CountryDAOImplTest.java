@@ -1,5 +1,7 @@
 package airporter.model;
 
+import airporter.model.dao.CountryDAO;
+import airporter.model.dao.CountryDAOImpl;
 import airporter.model.entity.Country;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
