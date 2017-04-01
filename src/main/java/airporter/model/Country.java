@@ -1,15 +1,19 @@
 package airporter.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.persistence.NamedQuery;
 
 /**
  * Created by pavel on 31.3.17.
  */
 @Entity
 @Table(name = "countries")
+@NamedQueries({
+        @NamedQuery(
+                name = JPANamedQuery.SELECT_COUNTRY_BY_CODE_OR_NAME,
+                query = "from Country where code = :code or name = :name"
+        )
+})
 public class Country {
     @Id
     @Column(name = "id")
@@ -45,3 +49,4 @@ public class Country {
         this.name = name;
     }
 }
+

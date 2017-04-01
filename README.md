@@ -3,7 +3,8 @@
 Airports data from http://ourairports.com/data/ (released under public domain)
 
 
-Query Option will ask the user for the country name or code and print the airports & runways at each airport. The input can be country code or country name. For bonus points make the test partial/fuzzy. e.g. entering zimb will result in Zimbabwe :)
+Query Option will ask the user for the country name or code and print the airports & runways at each airport.
+The input can be country code or country name. For bonus points make the test partial/fuzzy. e.g. entering zimb will result in Zimbabwe :)
 
 Choosing Reports will print the following:
 

@@ -1,6 +1,8 @@
 package airporter.controller;
 
 import airporter.form.QueryForm;
+import airporter.service.CountryService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,8 +16,8 @@ import java.util.logging.Logger;
  */
 @Controller
 public class QueryController {
-
-    final private static Logger log = Logger.getLogger(QueryController.class.toString());
+    @Autowired
+    private CountryService countryService;
 
     @GetMapping("/query")
     public String queryForm(Model model) {
@@ -26,6 +28,9 @@ public class QueryController {
     @PostMapping("/query")
     public String querySubmit(Model model, @ModelAttribute QueryForm form) {
         model.addAttribute("form", form);
+
+        countryService.getCountryInformation(form.getCountry());
+
         return "query";
     }
 }
