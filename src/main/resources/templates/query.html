@@ -32,10 +32,17 @@
                         <td>Code: </td> <td th:text="*{country.code}" />
                     </tr>
                     <tr th:if="*{not #lists.isEmpty(airports)}">
-                        <td th:rowspan="*{#lists.size(airports) + 1}">Airports: </td>
+                        <td th:rowspan="*{#lists.size(airports) + 1}">Airports (Runways): </td>
                     </tr>
-                    <tr th:each="airport : *{airports}">
-                        <td th:text="'[' + ${airport.ident} + '] ' + ${airport.name}"></td>
+                    <tr th:each="airport, airStat : *{airports}">
+                        <td>
+                            <span th:text="${airStat.count} + ' [' + ${airport.ident} + '] ' + ${airport.name}"/>
+                            <span th:if="${not #lists.isEmpty(airport.runways)}">
+                                (<span th:each="runway,iterStat : ${airport.runways}"
+                                       th:text="${runway.surface} + '[' + ${runway.length} + '-' + ${runway.width} + ']'
+                                                + (${iterStat.last} ? '' : '; ' ) "></span>)
+                            </span>
+                        </td>
                     </tr>
                 </table>
             </div>

@@ -3,6 +3,7 @@ package airporter.model.entity;
 import airporter.model.JPANamedQuery;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by pavel on 1.4.17.
@@ -28,6 +29,9 @@ public class Airport {
 
     @Column(name = "type")
     private String type;
+
+    @OneToMany(mappedBy = "airport", fetch = FetchType.EAGER)
+    private List<Runway> runways;
 
     public int getId() {
         return id;
@@ -59,5 +63,13 @@ public class Airport {
 
     public void setType(final String type) {
         this.type = type;
+    }
+
+    public List<Runway> getRunways() {
+        return runways;
+    }
+
+    public void setRunways(final List<Runway> runways) {
+        this.runways = runways;
     }
 }
