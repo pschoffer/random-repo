@@ -1,5 +1,7 @@
 package airporter.model;
 
+import airporter.model.entity.Country;
+
 /**
  * Created by pavel on 1.4.17.
  */

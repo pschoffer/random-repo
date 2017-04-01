@@ -1,4 +1,6 @@
-package airporter.model;
+package airporter.model.entity;
+
+import airporter.model.JPANamedQuery;
 
 import javax.persistence.*;
 import javax.persistence.NamedQuery;

@@ -1,6 +1,7 @@
 package airporter.controller;
 
 import airporter.form.QueryForm;
+import airporter.model.entity.Country;
 import airporter.service.CountryService;
 import airporter.service.exception.CountryNotFoundException;
 import org.mockito.InjectMocks;
@@ -8,10 +9,15 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.ui.ExtendedModelMap;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
+
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
 /**
@@ -20,19 +26,25 @@ import static org.mockito.Mockito.when;
 public class QueryControllerTest {
 
     public static final String FORM = "form";
-    private static final String ERROR = "error";
+    private static final String ERROR_KEY = "error";
+    private static final String COUNTRY_KEY = "country";
     private static final String COUNTRY = "CZ";
+    private static final String OBJECT_NAME = "form";
 
     @Mock
     private CountryService countryService;
     @InjectMocks
     private QueryController controller = new QueryController();
     private Model model;
+    private QueryForm inputForm;
+    @Mock
+    private BindingResult bindResult;
 
     @BeforeMethod
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
         model = new ExtendedModelMap();
+        inputForm = new QueryForm();
     }
 
     @Test
@@ -48,11 +60,10 @@ public class QueryControllerTest {
     @Test
     public void wQuerySubmit_thenPassTheForm() throws Exception {
         // prepare
-        final QueryForm inputForm = new QueryForm();
         inputForm.setCountry(COUNTRY);
 
         // execute
-        controller.querySubmit(model, inputForm);
+        controller.querySubmit(model, inputForm, bindResult);
 
         // assert
         final QueryForm form = (QueryForm) model.asMap().get(FORM);
@@ -63,17 +74,50 @@ public class QueryControllerTest {
     @Test
     public void whenCountryNotFound_thenErrorInModel() throws Exception {
         // prepare
-        final QueryForm inputForm = new QueryForm();
         inputForm.setCountry(COUNTRY);
-        final String expected_error = "Not Found";
-        final CountryNotFoundException exception = new CountryNotFoundException(expected_error);
-        when(countryService.getCountryInformation(COUNTRY)).thenThrow(exception);
+        final String expectedError = "Not Found";
+        final CountryNotFoundException exception = new CountryNotFoundException(expectedError);
+        when(countryService.getCountry(COUNTRY)).thenThrow(exception);
 
         // execute
-        controller.querySubmit(model, inputForm);
+        controller.querySubmit(model, inputForm, bindResult);
 
         // assert
-        final String error_msg = (String) model.asMap().get(ERROR);
-        Assert.assertEquals(error_msg, expected_error);
+        final String errorMsg = (String) model.asMap().get(ERROR_KEY);
+        Assert.assertEquals(errorMsg, expectedError);
+    }
+
+    @Test
+    public void whenNameTooLong_thenErrorInModel() throws Exception {
+        // prepare
+        final String error = "too long";
+        final ObjectError errorObject = new ObjectError(OBJECT_NAME,  error);
+        when(bindResult.hasErrors()).thenReturn(true);
+        when(bindResult.getAllErrors()).thenReturn(Arrays.asList(errorObject));
+
+        // execute
+        controller.querySubmit(model, inputForm, bindResult);
+
+        // assert
+        final String errorMsg = (String) model.asMap().get(ERROR_KEY);
+        Assert.assertEquals(errorMsg, "Country: " + error);
+    }
+
+    @Test
+    public void whenCountryFound_thenPassToModel() throws Exception {
+        // prepare
+        inputForm.setCountry(COUNTRY);
+        final Country expectedCountry = new Country();
+        expectedCountry.setCode(COUNTRY);
+        when(countryService.getCountry(anyString())).thenReturn(expectedCountry);
+
+        // execute
+        controller.querySubmit(model, inputForm, bindResult);
+
+        // assert
+        final Country country = (Country) model.asMap().get(COUNTRY_KEY);
+        final String errorMsg = (String) model.asMap().get(ERROR_KEY);
+        Assert.assertNull(errorMsg);
+        Assert.assertEquals(country, expectedCountry);
     }
 }

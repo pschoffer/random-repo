@@ -1,6 +1,6 @@
 package airporter.service;
 
-import airporter.model.Country;
+import airporter.model.entity.Country;
 import airporter.model.CountryDAO;
 import airporter.service.exception.CountryNotFoundException;
 import airporter.service.impl.CountryServiceImpl;
@@ -36,7 +36,7 @@ public class CountryServiceImplTest {
         when(countryDAO.getByCodeOrName(EXISTING_COUNTRY)).thenReturn(new Country());
 
         // execute
-        final Country country = service.getCountryInformation(EXISTING_COUNTRY);
+        final Country country = service.getCountry(EXISTING_COUNTRY);
 
         // assert
         Assert.assertNotNull(country);
@@ -46,6 +46,6 @@ public class CountryServiceImplTest {
             expectedExceptionsMessageRegExp = ".*not found.*" + NON_EXITING_COUNTRY + ".*")
     public void whenNonExistingCountry_thenThrowException() throws Exception {
         // execute
-        service.getCountryInformation(NON_EXITING_COUNTRY);
+        service.getCountry(NON_EXITING_COUNTRY);
     }
 }

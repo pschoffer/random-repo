@@ -1,6 +1,6 @@
 package airporter.service.impl;
 
-import airporter.model.Country;
+import airporter.model.entity.Country;
 import airporter.model.CountryDAO;
 import airporter.service.CountryService;
 import airporter.service.exception.CountryNotFoundException;
@@ -16,7 +16,7 @@ public class CountryServiceImpl implements CountryService {
     private CountryDAO countryDAO;
 
     @Override
-    public Country getCountryInformation(final String countryIdentification) throws CountryNotFoundException {
+    public Country getCountry(final String countryIdentification) throws CountryNotFoundException {
         final Country country = countryDAO.getByCodeOrName(countryIdentification);
         if (country == null) {
             final String msg = String.format("Country was not found (using \"%s\").", countryIdentification);
