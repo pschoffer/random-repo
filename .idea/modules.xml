@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/airport.iml" filepath="$PROJECT_DIR$/.idea/modules/airport.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/airport_main.iml" filepath="$PROJECT_DIR$/.idea/modules/airport_main.iml" group="airport" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/airport_test.iml" filepath="$PROJECT_DIR$/.idea/modules/airport_test.iml" group="airport" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/airporter.iml" filepath="$PROJECT_DIR$/.idea/modules/airporter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/airporter_main.iml" filepath="$PROJECT_DIR$/.idea/modules/airporter_main.iml" group="airporter" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/airporter_test.iml" filepath="$PROJECT_DIR$/.idea/modules/airporter_test.iml" group="airporter" />
     </modules>
   </component>
 </project>

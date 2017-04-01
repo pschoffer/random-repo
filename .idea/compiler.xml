@@ -4,6 +4,8 @@
     <bytecodeTargetLevel>
       <module name="airport_main" target="1.8" />
       <module name="airport_test" target="1.8" />
+      <module name="airporter_main" target="1.8" />
+      <module name="airporter_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
