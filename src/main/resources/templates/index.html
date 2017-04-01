@@ -9,9 +9,24 @@
 <body>
     <div class="main">
         <div th:replace="fragments/menu :: menu"></div>
-        <p>Hello airporter enthusiast!!</p>
-        <p>Choose wisely:</p>
-        <a href="/query"><p>query</p></a>
+        <div class="content">
+            <p>Hello airporter enthusiast!!</p>
+            <p>Choose wisely:</p>
+            <table class="button-list">
+                <tr>
+                    <td>
+                        <a href="/query">
+                            <button class="button-link">Query</button>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/report">
+                            <button class="button-link">Report</button>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
     <div th:replace="fragments/footer :: footer"></div>
 </body>

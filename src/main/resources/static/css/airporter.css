@@ -8,7 +8,7 @@ div.main {
    width: 60%;
    height: 100%;
    margin: auto;
-   background-color: white;
+   background-color: #CBEACD;
 }
 
 ul.menu {
@@ -34,6 +34,27 @@ ul.menu li a {
 ul.menu li a:hover {
     background-color: #4CAF50;
     color: black;
+}
+
+div.content {
+    margin: 5px;
+}
+
+.button-link {
+    border-radius: 10px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background-color: #4CAF50;
+    padding: 10px 20px;
+}
+
+.button-link:hover {
+    background-color: #64B967;
+    cursor: pointer;
+}
+
+.button-list {
+    text-align: center;
+    width: 100%;
 }
 
 div.footer {
