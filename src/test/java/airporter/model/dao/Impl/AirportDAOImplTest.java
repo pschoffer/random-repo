@@ -1,8 +1,8 @@
-package airporter.model;
+package airporter.model.dao.Impl;
 
-import airporter.model.dao.CountryDAO;
-import airporter.model.dao.CountryDAOImpl;
-import airporter.model.entity.Country;
+import airporter.model.JPANamedQuery;
+import airporter.model.dao.AirportDAO;
+import airporter.model.entity.Airport;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -14,47 +14,44 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 import java.util.Arrays;
+import java.util.List;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import static org.testng.Assert.*;
 
 /**
  * Created by pavel on 1.4.17.
  */
-public class CountryDAOImplTest {
+public class AirportDAOImplTest {
 
     private static final String EXISTING_COUNTRY = "CZ";
     private static final String NON_EXISTING_COUNTRY = "BLABLA";
     @Mock
     private EntityManager entityManager;
     @InjectMocks
-    private final CountryDAO dao = new CountryDAOImpl();
+    private final AirportDAO dao = new AirportDAOImpl();
 
     @Mock
-    private TypedQuery<Country> query;
-
-    private Country country;
+    private TypedQuery<Airport> query;
 
     @BeforeMethod
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
-        when(entityManager.createNamedQuery(JPANamedQuery.SELECT_COUNTRY_BY_CODE_OR_NAME, Country.class))
+        when(entityManager.createNamedQuery(JPANamedQuery.SELECT_AIRPORT_BY_COUNTRY_CODE, Airport.class))
                 .thenReturn(query);
-
-        country = new Country();
     }
 
     @Test
     public void whenExistingCountry_thenReturnIt() throws Exception {
         // prepare
-        when(query.getResultList()).thenReturn(Arrays.asList(country));
+        final List<Airport> airportsFromDB = Arrays.asList(new Airport());
+        when(query.getResultList()).thenReturn(airportsFromDB);
 
         // execute
-        final Country country = dao.getByCodeOrName(EXISTING_COUNTRY);
+        final List<Airport> airports = dao.findByCountryCode(EXISTING_COUNTRY);
 
         // assert
-        Assert.assertNotNull(country);
+        Assert.assertFalse(airports.isEmpty());
     }
 
     @Test
@@ -63,9 +60,10 @@ public class CountryDAOImplTest {
         when(query.getResultList()).thenReturn(Arrays.asList());
 
         // execute
-        final Country country = dao.getByCodeOrName(NON_EXISTING_COUNTRY);
+        final List<Airport> airports = dao.findByCountryCode(NON_EXISTING_COUNTRY);
 
         // assert
-        Assert.assertNull(country);
+        Assert.assertTrue(airports.isEmpty());
     }
+
 }

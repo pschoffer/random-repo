@@ -1,27 +1,37 @@
 package airporter.service.impl;
 
-import airporter.model.entity.Country;
+import airporter.model.dao.AirportDAO;
 import airporter.model.dao.CountryDAO;
-import airporter.service.CountryService;
+import airporter.model.entity.Airport;
+import airporter.model.entity.Country;
+import airporter.service.QueryService;
+import airporter.service.dto.CountryAirports;
 import airporter.service.exception.CountryNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by pavel on 1.4.17.
  */
 @Component
-public class CountryServiceImpl implements CountryService {
+public class QueryServiceImpl implements QueryService {
     @Autowired
     private CountryDAO countryDAO;
+    @Autowired
+    private AirportDAO airportDAO;
 
     @Override
-    public Country getCountry(final String countryIdentification) throws CountryNotFoundException {
+    public CountryAirports getCountryAirports(final String countryIdentification) throws CountryNotFoundException {
         final Country country = countryDAO.getByCodeOrName(countryIdentification);
         if (country == null) {
             final String msg = String.format("Country was not found (using \"%s\").", countryIdentification);
             throw new CountryNotFoundException(msg);
         }
-        return country;
+
+        final List<Airport> airports = new ArrayList<>();
+        return new CountryAirports(country, airports);
     }
 }

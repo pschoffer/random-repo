@@ -1,8 +1,8 @@
 package airporter.controller;
 
 import airporter.form.QueryForm;
-import airporter.model.entity.Country;
-import airporter.service.CountryService;
+import airporter.service.QueryService;
+import airporter.service.dto.CountryAirports;
 import airporter.service.exception.CountryNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,10 +23,10 @@ import java.util.StringJoiner;
 public class QueryController {
     private final static String ERROR_KEY = "error";
     private final static String FORM_KEY = "form";
-    private final static String COUNTRY_KEY = "country";
+    private final static String COUNTRY_INFO_KEY = "country_info";
 
     @Autowired
-    private CountryService countryService;
+    private QueryService queryService;
 
     @GetMapping("/query")
     public String queryForm(Model model) {
@@ -43,8 +43,8 @@ public class QueryController {
             model.addAttribute(ERROR_KEY, errorMsg);
         } else {
             try {
-                final Country country = countryService.getCountry(form.getCountry());
-                model.addAttribute(COUNTRY_KEY, country);
+                final CountryAirports countryAirports = queryService.getCountryAirports(form.getCountry());
+                model.addAttribute(COUNTRY_INFO_KEY, countryAirports);
             } catch (final CountryNotFoundException e) {
                 model.addAttribute(ERROR_KEY, e.getMessage());
             }

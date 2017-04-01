@@ -1,6 +1,7 @@
-package airporter.model.dao;
+package airporter.model.dao.Impl;
 
 import airporter.model.JPANamedQuery;
+import airporter.model.dao.CountryDAO;
 import airporter.model.entity.Country;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 /**
@@ -22,6 +24,7 @@ public class CountryDAOImpl implements CountryDAO {
 
     @Override
     public Country getByCodeOrName(final String identification) {
+        final CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         final TypedQuery<Country> namedQuery = entityManager.createNamedQuery(
                 JPANamedQuery.SELECT_COUNTRY_BY_CODE_OR_NAME, Country.class);
         namedQuery.setParameter("code", identification);
