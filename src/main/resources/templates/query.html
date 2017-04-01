@@ -10,7 +10,20 @@
     <div class="main">
         <div th:replace="fragments/menu :: menu"></div>
         <div class="content">
-            <p>Country1</p>
+            <h3>Query</h3>
+            <p>Please enter country you are interested in</p>
+            <form action="#" th:object="${form}" method="post">
+                <table>
+                    <tr>
+                        <td>Country:</td>
+                        <td><input type="text" th:field="*{country}" /></td>
+                        <!--<td th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Country is too long</td>-->
+                    </tr>
+                    <tr>
+                        <td><button class="button-link" type="submit">Query</button></td>
+                    </tr>
+                </table>
+            </form>
         </div>
     </div>
     <div th:replace="fragments/footer :: footer"></div>
