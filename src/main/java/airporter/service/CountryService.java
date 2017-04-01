@@ -1,10 +1,11 @@
 package airporter.service;
 
-import airporter.dto.CountryAirports;
+import airporter.model.Country;
+import airporter.service.exception.CountryNotFoundException;
 
 /**
  * Created by pavel on 1.4.17.
  */
 public interface CountryService {
-    CountryAirports getCountryInformation(final String country);
+    Country getCountryInformation(final String country) throws CountryNotFoundException;
 }

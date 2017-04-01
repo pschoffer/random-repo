@@ -10,6 +10,7 @@
     <div class="main">
         <div th:replace="fragments/menu :: menu"></div>
         <div class="content">
+            <div th:replace="fragments/error :: error"></div>
             <h3>Query</h3>
             <p>Please enter country you are interested in</p>
             <form action="#" th:object="${form}" method="post">

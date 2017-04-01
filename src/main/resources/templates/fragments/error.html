@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<div th:fragment="error">
+    <ul class="error" th:if="${error}">
+        <li th:text="${error}"></li>
+    </ul>
+</div>
+</body>
+</html>

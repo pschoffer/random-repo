@@ -2,6 +2,7 @@ package airporter.controller;
 
 import airporter.form.QueryForm;
 import airporter.service.CountryService;
+import airporter.service.exception.CountryNotFoundException;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -11,12 +12,15 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import static org.mockito.Mockito.when;
+
 /**
  * Created by pavel on 1.4.17.
  */
 public class QueryControllerTest {
 
     public static final String FORM = "form";
+    private static final String ERROR = "error";
     private static final String COUNTRY = "CZ";
 
     @Mock
@@ -55,4 +59,21 @@ public class QueryControllerTest {
         Assert.assertEquals(form.getCountry(), inputForm.getCountry());
     }
 
+
+    @Test
+    public void whenCountryNotFound_thenErrorInModel() throws Exception {
+        // prepare
+        final QueryForm inputForm = new QueryForm();
+        inputForm.setCountry(COUNTRY);
+        final String expected_error = "Not Found";
+        final CountryNotFoundException exception = new CountryNotFoundException(expected_error);
+        when(countryService.getCountryInformation(COUNTRY)).thenThrow(exception);
+
+        // execute
+        controller.querySubmit(model, inputForm);
+
+        // assert
+        final String error_msg = (String) model.asMap().get(ERROR);
+        Assert.assertEquals(error_msg, expected_error);
+    }
 }

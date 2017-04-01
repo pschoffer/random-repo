@@ -2,19 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7e498d0-70ef-4865-bd96-308294d00432" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/airporter/dto/CountryAirports.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/airporter/model/JPANamedQuery.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/airporter/service/CountryService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/airporter/service/CountryServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/airporter/model/CountryDAOImplTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/airporter_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/airporter_test.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/airporter/exception/AirporterException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/airporter/service/exception/CountryNotFoundException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/error.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/airporter/service/CountryServiceImplTest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/airporter/dto/CountryAirports.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/airporter/service/CountryServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/airporter/service/impl/CountryServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/airporter/controller/QueryController.java" afterPath="$PROJECT_DIR$/src/main/java/airporter/controller/QueryController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/airporter/model/Country.java" afterPath="$PROJECT_DIR$/src/main/java/airporter/model/Country.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/airporter/model/CountryDAO.java" afterPath="$PROJECT_DIR$/src/main/java/airporter/model/CountryDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/airporter/model/CountryDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/airporter/model/CountryDAOImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/airporter/service/CountryService.java" afterPath="$PROJECT_DIR$/src/main/java/airporter/service/CountryService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/css/airporter.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/airporter.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/query.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/query.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/airporter/controller/QueryControllerTest.java" afterPath="$PROJECT_DIR$/src/test/java/airporter/controller/QueryControllerTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -147,11 +145,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CountryDAOImplTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/airporter/model/CountryDAOImplTest.java">
+      <file leaf-file-name="error.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fragments/error.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="53" column="71" lean-forward="true" selection-start-line="53" selection-start-column="71" selection-end-line="53" selection-end-column="71" />
+            <state relative-caret-position="126">
+              <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -514,23 +512,29 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/airporter.css" />
         <option value="$PROJECT_DIR$/src/main/java/airporter/form/QueryForm.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/query.html" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/main/java/airporter/dto/CountryAirports.java" />
-        <option value="$PROJECT_DIR$/src/main/java/airporter/service/CountryService.java" />
         <option value="$PROJECT_DIR$/src/main/java/airporter/model/CountryDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/airporter/service/CountryServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/airporter/controller/QueryController.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/test/java/airporter/controller/QueryControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/airporter/constant/NamedQuery.java" />
         <option value="$PROJECT_DIR$/src/main/java/airporter/model/NamedQuery.java" />
         <option value="$PROJECT_DIR$/src/main/java/airporter/model/JPANamedQuery.java" />
         <option value="$PROJECT_DIR$/src/main/java/airporter/model/Country.java" />
         <option value="$PROJECT_DIR$/src/main/java/airporter/model/CountryDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/airporter/model/CountryDAOImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/airporter/dto/CountryAirports.java" />
+        <option value="$PROJECT_DIR$/src/main/java/airporter/service/CountryService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/airporter/service/CountryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/airporter/service/exception/CountryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/airporter/service/CountryServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/airporter/service/exception/CountryNotFoundException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/airporter/exception/AirporterException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/airporter/service/impl/CountryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/airporter/controller/QueryController.java" />
+        <option value="$PROJECT_DIR$/src/test/java/airporter/controller/QueryControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/query.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/airporter.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/fragments/error.html" />
       </list>
     </option>
   </component>
@@ -993,6 +997,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="airporter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="random-repo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="airporter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1022,6 +1056,10 @@
               <option name="myItemId" value="airporter" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1039,6 +1077,92 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
               <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="airporter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="random-repo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fragments" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="airporter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="random-repo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="airporter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="random-repo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1064,6 +1188,104 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="airporter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="airporter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="random-repo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="airporter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="airporter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="random-repo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="airporter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="airporter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="random-repo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="airporter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exception" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1153,7 +1375,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dto" />
+              <option name="myItemId" value="exception" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1187,20 +1409,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="airporter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="random-repo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -1212,12 +1420,13 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.5253456" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/pavel/git/random-repo/src/main/java/airporter/model/CountryDAOImpl.java" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/pavel/git/random-repo/src/test/java/airporter/service/CountryServiceImplTest.java" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="TestNG" />
     <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="airporter.service" />
       <recent name="airporter.model" />
       <recent name="airporter.controller" />
     </key>
@@ -1242,40 +1451,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources/properties" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.CountryDAOImplTest">
-    <configuration default="false" name="CountryDAOImplTest.whenNonExistingCountry_thenReturnNull" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="airporter.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="airporter_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="airporter.model" />
-      <option name="MAIN_CLASS_NAME" value="airporter.model.CountryDAOImplTest" />
-      <option name="METHOD_NAME" value="whenNonExistingCountry_thenReturnNull" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.Run">
     <configuration default="false" name="CountryDAOImplTest.whenExistingCountry_thenReturnIt" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1325,6 +1501,105 @@
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="false" name="CountryServiceImplTest.whenExistingCountry_thenReturnInformation" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="airporter.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="airporter_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="airporter.service" />
+      <option name="MAIN_CLASS_NAME" value="airporter.service.CountryServiceImplTest" />
+      <option name="METHOD_NAME" value="whenExistingCountry_thenReturnInformation" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="false" name="CountryServiceImplTest.whenNonExistingCountry_thenThrowException" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="airporter.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="airporter_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="airporter.service" />
+      <option name="MAIN_CLASS_NAME" value="airporter.service.CountryServiceImplTest" />
+      <option name="METHOD_NAME" value="whenNonExistingCountry_thenThrowException" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="false" name="QueryControllerTest.whenCountryNotFound_thenErrorInModel" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="airporter.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="airporter_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="airporter.controller" />
+      <option name="MAIN_CLASS_NAME" value="airporter.controller.QueryControllerTest" />
+      <option name="METHOD_NAME" value="whenCountryNotFound_thenErrorInModel" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -1622,19 +1897,23 @@
         <option name="Gradle.BeforeRunTask" enabled="true" tasks="build" externalProjectPath="$PROJECT_DIR$" vmOptions="" scriptParameters="" />
       </method>
     </configuration>
-    <list size="6">
+    <list size="8">
       <item index="0" class="java.lang.String" itemvalue="Application.Run" />
       <item index="1" class="java.lang.String" itemvalue="Gradle.Build" />
       <item index="2" class="java.lang.String" itemvalue="TestNG.FullTests" />
-      <item index="3" class="java.lang.String" itemvalue="TestNG.CountryDAOImplTest.whenNonExistingCountry_thenReturnNull" />
-      <item index="4" class="java.lang.String" itemvalue="TestNG.CountryDAOImplTest.whenExistingCountry_thenReturnIt" />
-      <item index="5" class="java.lang.String" itemvalue="TestNG.CountryDAOImplTest" />
+      <item index="3" class="java.lang.String" itemvalue="TestNG.CountryDAOImplTest.whenExistingCountry_thenReturnIt" />
+      <item index="4" class="java.lang.String" itemvalue="TestNG.CountryDAOImplTest" />
+      <item index="5" class="java.lang.String" itemvalue="TestNG.CountryServiceImplTest.whenExistingCountry_thenReturnInformation" />
+      <item index="6" class="java.lang.String" itemvalue="TestNG.CountryServiceImplTest.whenNonExistingCountry_thenThrowException" />
+      <item index="7" class="java.lang.String" itemvalue="TestNG.QueryControllerTest.whenCountryNotFound_thenErrorInModel" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="TestNG.CountryDAOImplTest" />
-        <item index="1" class="java.lang.String" itemvalue="TestNG.CountryDAOImplTest.whenExistingCountry_thenReturnIt" />
-        <item index="2" class="java.lang.String" itemvalue="TestNG.CountryDAOImplTest.whenNonExistingCountry_thenReturnNull" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="TestNG.QueryControllerTest.whenCountryNotFound_thenErrorInModel" />
+        <item index="1" class="java.lang.String" itemvalue="TestNG.CountryServiceImplTest.whenNonExistingCountry_thenThrowException" />
+        <item index="2" class="java.lang.String" itemvalue="TestNG.CountryServiceImplTest.whenExistingCountry_thenReturnInformation" />
+        <item index="3" class="java.lang.String" itemvalue="TestNG.CountryDAOImplTest" />
+        <item index="4" class="java.lang.String" itemvalue="TestNG.CountryDAOImplTest.whenExistingCountry_thenReturnIt" />
       </list>
     </recent_temporary>
   </component>
@@ -1655,35 +1934,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CountryDAOImplTest - 2017.04.01 at 14h 19m 21s.xml">
+    <history-entry file="CountryDAOImplTest - 2017.04.01 at 15h 38m 41s.xml">
       <configuration name="CountryDAOImplTest" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="CountryDAOImplTest - 2017.04.01 at 15h 03m 24s.xml">
-      <configuration name="CountryDAOImplTest" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CountryDAOImplTest_(1) - 2017.04.01 at 14h 26m 26s.xml">
-      <configuration name="CountryDAOImplTest (1)" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CountryDAOImplTest_(2) - 2017.04.01 at 14h 28m 15s.xml">
-      <configuration name="CountryDAOImplTest (2)" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CountryDAOImplTest_whenExistingCountry_thenReturnIt - 2017.04.01 at 15h 02m 42s.xml">
+    <history-entry file="CountryDAOImplTest_whenExistingCountry_thenReturnIt - 2017.04.01 at 15h 38m 36s.xml">
       <configuration name="CountryDAOImplTest.whenExistingCountry_thenReturnIt" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CountryDAOImplTest_whenExistingCountry_thenReturnIt - 2017.04.01 at 15h 10m 02s.xml">
-      <configuration name="CountryDAOImplTest.whenExistingCountry_thenReturnIt" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CountryDAOImplTest_whenNonExistingCountry_thenReturnNull - 2017.04.01 at 15h 31m 51s.xml">
-      <configuration name="CountryDAOImplTest.whenNonExistingCountry_thenReturnNull" configurationId="TestNG" />
     </history-entry>
     <history-entry file="CountryDAOImplTest_whenNonExistingCountry_thenReturnNull - 2017.04.01 at 15h 38m 25s.xml">
       <configuration name="CountryDAOImplTest.whenNonExistingCountry_thenReturnNull" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="FullTests - 2017.04.01 at 15h 33m 12s.xml">
-      <configuration name="FullTests" configurationId="TestNG" />
+    <history-entry file="CountryServiceImplTest_whenExistingCountry_thenReturnInformation - 2017.04.01 at 15h 49m 56s.xml">
+      <configuration name="CountryServiceImplTest.whenExistingCountry_thenReturnInformation" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="FullTests - 2017.04.01 at 15h 37m 02s.xml">
-      <configuration name="FullTests" configurationId="TestNG" />
+    <history-entry file="CountryServiceImplTest_whenExistingCountry_thenReturnInformation - 2017.04.01 at 15h 50m 39s.xml">
+      <configuration name="CountryServiceImplTest.whenExistingCountry_thenReturnInformation" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CountryServiceImplTest_whenExistingCountry_thenReturnInformation - 2017.04.01 at 15h 55m 09s.xml">
+      <configuration name="CountryServiceImplTest.whenExistingCountry_thenReturnInformation" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CountryServiceImplTest_whenNonExistingCountry_thenThrowException - 2017.04.01 at 15h 55m 14s.xml">
+      <configuration name="CountryServiceImplTest.whenNonExistingCountry_thenThrowException" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CountryServiceImplTest_whenNonExistingCountry_thenThrowException - 2017.04.01 at 15h 58m 29s.xml">
+      <configuration name="CountryServiceImplTest.whenNonExistingCountry_thenThrowException" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="QueryControllerTest_whenCountryNotFound_thenErrorInModel - 2017.04.01 at 16h 03m 12s.xml">
+      <configuration name="QueryControllerTest.whenCountryNotFound_thenErrorInModel" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="QueryControllerTest_whenCountryNotFound_thenErrorInModel - 2017.04.01 at 16h 04m 51s.xml">
+      <configuration name="QueryControllerTest.whenCountryNotFound_thenErrorInModel" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -1705,9 +1984,10 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299389" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18229167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18229167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299389" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31927082" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1718,7 +1998,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299389" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -1740,16 +2019,16 @@
         <state relative-caret-position="108">
           <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
           <folding>
-            <marker date="1491039160343" expanded="true" signature="57:1174" ph="..." />
-            <marker date="1491039160343" expanded="true" signature="64:308" ph="..." />
-            <marker date="1491039160343" expanded="true" signature="257:300" ph="..." />
-            <marker date="1491039160343" expanded="true" signature="315:1166" ph="..." />
-            <marker date="1491039160343" expanded="true" signature="338:1102" ph="..." />
-            <marker date="1491039160343" expanded="true" signature="424:1091" ph="..." />
-            <marker date="1491039160343" expanded="true" signature="577:1076" ph="..." />
-            <marker date="1491039160343" expanded="true" signature="601:1056" ph="..." />
-            <marker date="1491039160343" expanded="true" signature="626:890" ph="..." />
-            <marker date="1491039160343" expanded="true" signature="915:1031" ph="..." />
+            <marker date="1491055678315" expanded="true" signature="57:1236" ph="..." />
+            <marker date="1491055678315" expanded="true" signature="64:308" ph="..." />
+            <marker date="1491055678315" expanded="true" signature="257:300" ph="..." />
+            <marker date="1491055678315" expanded="true" signature="315:1228" ph="..." />
+            <marker date="1491055678315" expanded="true" signature="338:1164" ph="..." />
+            <marker date="1491055678315" expanded="true" signature="424:1153" ph="..." />
+            <marker date="1491055678315" expanded="true" signature="639:1138" ph="..." />
+            <marker date="1491055678315" expanded="true" signature="663:1118" ph="..." />
+            <marker date="1491055678315" expanded="true" signature="688:952" ph="..." />
+            <marker date="1491055678315" expanded="true" signature="977:1093" ph="..." />
           </folding>
         </state>
       </provider>
@@ -2140,44 +2419,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/airporter.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="49" column="16" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
-          <folding>
-            <marker date="1491037978175" expanded="true" signature="11:80" ph="{...}" />
-            <marker date="1491037978175" expanded="true" signature="91:173" ph="{...}" />
-            <marker date="1491037978175" expanded="true" signature="183:294" ph="{...}" />
-            <marker date="1491037978175" expanded="true" signature="307:351" ph="{...}" />
-            <marker date="1491037978175" expanded="true" signature="365:481" ph="{...}" />
-            <marker date="1491037978175" expanded="true" signature="502:554" ph="{...}" />
-            <marker date="1491037978175" expanded="true" signature="603:733" ph="{...}" />
-            <marker date="1491037978175" expanded="true" signature="754:809" ph="{...}" />
-            <marker date="1491037978175" expanded="true" signature="824:868" ph="{...}" />
-            <marker date="1491037978175" expanded="true" signature="881:1010" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/query.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding>
-            <marker date="1491039160343" expanded="true" signature="57:1174" ph="..." />
-            <marker date="1491039160343" expanded="true" signature="64:308" ph="..." />
-            <marker date="1491039160343" expanded="true" signature="257:300" ph="..." />
-            <marker date="1491039160343" expanded="true" signature="315:1166" ph="..." />
-            <marker date="1491039160343" expanded="true" signature="338:1102" ph="..." />
-            <marker date="1491039160343" expanded="true" signature="424:1091" ph="..." />
-            <marker date="1491039160343" expanded="true" signature="577:1076" ph="..." />
-            <marker date="1491039160343" expanded="true" signature="601:1056" ph="..." />
-            <marker date="1491039160343" expanded="true" signature="626:890" ph="..." />
-            <marker date="1491039160343" expanded="true" signature="915:1031" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -2244,31 +2485,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/airporter/dto/CountryAirports.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-          <folding>
-            <marker date="1491045395047" expanded="true" signature="24:62" ph="/**...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/airporter/service/CountryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="63" lean-forward="false" selection-start-line="8" selection-start-column="63" selection-end-line="8" selection-end-column="63" />
-          <folding>
-            <marker date="1491045394995" expanded="true" signature="67:105" ph="/**...*/" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2423,20 +2644,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/airporter/controller/QueryControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <marker date="1491048932179" expanded="true" signature="38:391" ph="..." />
-            <marker date="1491048932179" expanded="true" signature="393:431" ph="/**...*/" />
-            <marker date="1491048932179" expanded="true" signature="782:873" ph="{...}" />
-            <marker date="1491048932179" expanded="true" signature="955:1144" ph="{...}" />
-            <marker date="1491048932179" expanded="true" signature="1220:1567" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/airporter/model/CountryDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -2534,31 +2741,6 @@
             <marker date="1490988705133" expanded="true" signature="14284:14610" ph="/**...*/" />
             <marker date="1490988705133" expanded="true" signature="14656:14916" ph="/**...*/" />
             <marker date="1490988705133" expanded="true" signature="14948:15524" ph="/**...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/airporter/controller/QueryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding>
-            <marker date="1491047125567" expanded="true" signature="38:470" ph="..." />
-            <marker date="1491047125567" expanded="true" signature="472:511" ph="/**...*/" />
-            <marker date="1491047125567" expanded="true" signature="681:765" ph="{...}" />
-            <marker date="1491047125567" expanded="true" signature="869:1009" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/airporter/service/CountryServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <marker date="1491047125635" expanded="true" signature="35:244" ph="..." />
-            <marker date="1491047125635" expanded="true" signature="246:284" ph="/**...*/" />
-            <marker date="1491047125635" expanded="true" signature="506:617" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2855,8 +3037,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/airporter/model/CountryDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="270">
+          <caret line="26" column="28" lean-forward="true" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
           <folding>
             <marker date="1491053800127" expanded="true" signature="26:503" ph="..." />
             <marker date="1491053800127" expanded="false" signature="33:503" ph="..." />
@@ -2867,10 +3049,162 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/airporter/dto/CountryAirports.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/airporter/service/CountryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+          <folding>
+            <marker date="1491055084351" expanded="true" signature="122:160" ph="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/airporter/exception/AirporterException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+          <folding>
+            <marker date="1491055084315" expanded="true" signature="30:68" ph="/**...*/" />
+            <marker date="1491055084315" expanded="true" signature="167:178" ph=" { " />
+            <marker date="1491055084315" expanded="true" signature="189:195" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/airporter/service/impl/CountryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+          <folding>
+            <marker date="1491055084419" expanded="true" signature="33:313" ph="..." />
+            <marker date="1491055084419" expanded="false" signature="40:313" ph="..." />
+            <marker date="1491055084419" expanded="true" signature="315:353" ph="/**...*/" />
+            <marker date="1491055084419" expanded="true" signature="599:917" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/airporter/service/CountryServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="48" column="26" lean-forward="true" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
+          <folding>
+            <marker date="1491054903431" expanded="true" signature="35:448" ph="..." />
+            <marker date="1491054903431" expanded="false" signature="60:407" ph="..." />
+            <marker date="1491054903431" expanded="true" signature="450:488" ph="/**...*/" />
+            <marker date="1491054903431" expanded="true" signature="836:888" ph="{...}" />
+            <marker date="1491054903431" expanded="true" signature="977:1248" ph="{...}" />
+            <marker date="1491054903431" expanded="true" signature="1254:1404" ph="@{...}" />
+            <marker date="1491054903431" expanded="true" signature="1482:1568" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/airporter/model/CountryDAOImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="53" column="71" lean-forward="true" selection-start-line="53" selection-start-column="71" selection-end-line="53" selection-end-column="71" />
+        <state relative-caret-position="189">
+          <caret line="53" column="70" lean-forward="false" selection-start-line="53" selection-start-column="70" selection-end-line="53" selection-end-column="70" />
+          <folding>
+            <marker date="1491053909623" expanded="false" signature="33:732" ph="..." />
+            <marker date="1491053909623" expanded="true" signature="734:772" ph="/**...*/" />
+            <marker date="1491053909623" expanded="true" signature="1195:1422" ph="{...}" />
+            <marker date="1491053909623" expanded="true" signature="1502:1749" ph="{...}" />
+            <marker date="1491053909623" expanded="true" signature="1834:2075" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/airporter/service/exception/CountryNotFoundException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <folding>
+            <marker date="1491055084395" expanded="true" signature="86:124" ph="/**...*/" />
+            <marker date="1491055084395" expanded="true" signature="245:256" ph=" { " />
+            <marker date="1491055084395" expanded="true" signature="267:273" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/airporter/controller/QueryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="29" column="22" lean-forward="false" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+          <folding>
+            <marker date="1491055386487" expanded="true" signature="38:531" ph="..." />
+            <marker date="1491055386487" expanded="true" signature="533:572" ph="/**...*/" />
+            <marker date="1491055386487" expanded="true" signature="742:826" ph="{...}" />
+            <marker date="1491055386487" expanded="true" signature="930:1208" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/airporter/controller/QueryControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="77" column="4" lean-forward="false" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="4" />
+          <folding>
+            <marker date="1491055485551" expanded="true" signature="38:493" ph="..." />
+            <marker date="1491055485551" expanded="true" signature="495:533" ph="/**...*/" />
+            <marker date="1491055485551" expanded="true" signature="933:1024" ph="{...}" />
+            <marker date="1491055485551" expanded="true" signature="1106:1295" ph="{...}" />
+            <marker date="1491055485551" expanded="true" signature="1371:1718" ph="{...}" />
+            <marker date="1491055485551" expanded="true" signature="1803:2364" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/airporter.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="70" column="19" lean-forward="false" selection-start-line="70" selection-start-column="19" selection-end-line="70" selection-end-column="19" />
+          <folding>
+            <marker date="1491056139075" expanded="true" signature="11:80" ph="{...}" />
+            <marker date="1491056139075" expanded="true" signature="91:173" ph="{...}" />
+            <marker date="1491056139075" expanded="true" signature="183:294" ph="{...}" />
+            <marker date="1491056139075" expanded="true" signature="307:351" ph="{...}" />
+            <marker date="1491056139075" expanded="true" signature="365:481" ph="{...}" />
+            <marker date="1491056139075" expanded="true" signature="502:554" ph="{...}" />
+            <marker date="1491056139075" expanded="true" signature="603:733" ph="{...}" />
+            <marker date="1491056139075" expanded="true" signature="754:809" ph="{...}" />
+            <marker date="1491056139075" expanded="true" signature="824:868" ph="{...}" />
+            <marker date="1491056139075" expanded="true" signature="881:1010" ph="{...}" />
+            <marker date="1491056139075" expanded="true" signature="1021:1175" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/query.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="52" lean-forward="false" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
+          <folding>
+            <marker date="1491055678315" expanded="true" signature="57:1236" ph="..." />
+            <marker date="1491055678315" expanded="true" signature="64:308" ph="..." />
+            <marker date="1491055678315" expanded="true" signature="257:300" ph="..." />
+            <marker date="1491055678315" expanded="true" signature="315:1228" ph="..." />
+            <marker date="1491055678315" expanded="true" signature="338:1164" ph="..." />
+            <marker date="1491055678315" expanded="true" signature="424:1153" ph="..." />
+            <marker date="1491055678315" expanded="true" signature="639:1138" ph="..." />
+            <marker date="1491055678315" expanded="true" signature="663:1118" ph="..." />
+            <marker date="1491055678315" expanded="true" signature="688:952" ph="..." />
+            <marker date="1491055678315" expanded="true" signature="977:1093" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fragments/error.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
           <folding />
         </state>
       </provider>

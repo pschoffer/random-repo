@@ -65,3 +65,12 @@ div.footer {
     bottom:0;
     width: 100%;
 }
+
+ul.error {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    background-color: #EFA5A5;
+    border: solid;
+    border-color: #9C1010;
+}

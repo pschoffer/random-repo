@@ -2,6 +2,7 @@ package airporter.controller;
 
 import airporter.form.QueryForm;
 import airporter.service.CountryService;
+import airporter.service.exception.CountryNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,7 +30,11 @@ public class QueryController {
     public String querySubmit(Model model, @ModelAttribute QueryForm form) {
         model.addAttribute("form", form);
 
-        countryService.getCountryInformation(form.getCountry());
+        try {
+            countryService.getCountryInformation(form.getCountry());
+        } catch (final CountryNotFoundException e) {
+            model.addAttribute("error", e.getMessage());
+        }
 
         return "query";
     }
