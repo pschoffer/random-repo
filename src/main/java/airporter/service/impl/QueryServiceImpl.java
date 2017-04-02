@@ -2,10 +2,11 @@ package airporter.service.impl;
 
 import airporter.model.dao.AirportDAO;
 import airporter.model.dao.CountryDAO;
+import airporter.model.dao.RunwayDAO;
 import airporter.model.dao.dto.CountryAirportCount;
+import airporter.model.dao.dto.RunwaySurfaceCount;
 import airporter.model.entity.Airport;
 import airporter.model.entity.Country;
-import airporter.model.entity.Runway;
 import airporter.service.QueryService;
 import airporter.service.dto.CountryAirports;
 import airporter.service.dto.CountryRunway;
@@ -13,9 +14,8 @@ import airporter.service.exception.CountryNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import javax.persistence.ManyToOne;
+import java.util.*;
 
 /**
  * Created by pavel on 1.4.17.
@@ -26,6 +26,8 @@ public class QueryServiceImpl implements QueryService {
     private CountryDAO countryDAO;
     @Autowired
     private AirportDAO airportDAO;
+    @Autowired
+    private RunwayDAO runwayDAO;
 
     @Override
     public CountryAirports getCountryAirports(final String countryIdentification) throws CountryNotFoundException {
@@ -55,11 +57,25 @@ public class QueryServiceImpl implements QueryService {
     private List<CountryRunway> findCountryRunways(final List<CountryAirportCount> countryCounts) {
         final List<CountryRunway> countryRunways = new ArrayList<>();
 
+        final List<String> countryCodes = new ArrayList<>();
+        final Map<String, List<RunwaySurfaceCount>> countryRunwaySurfaces = new HashMap<>();
         for (final CountryAirportCount countryCount : countryCounts) {
-            final List<Runway> runways = new ArrayList<>();
-            final CountryRunway countryRunway = new CountryRunway(countryCount.getCountry(), runways,
+            final Country country = countryCount.getCountry();
+            countryCodes.add(country.getCode());
+
+            final List<RunwaySurfaceCount> runways = new ArrayList<>();
+            countryRunwaySurfaces.put(country.getCode(), runways);
+
+            final CountryRunway countryRunway = new CountryRunway(country, runways,
                     countryCount.getCount());
             countryRunways.add(countryRunway);
+        }
+
+        final List<RunwaySurfaceCount> runwaySurfaceCounts = runwayDAO.findRunwaySurfaceCounts(countryCodes);
+        for (final RunwaySurfaceCount runwaySurfaceCount : runwaySurfaceCounts) {
+            final String countryCode = runwaySurfaceCount.getCountryCode();
+            final List<RunwaySurfaceCount> countrySpecificList = countryRunwaySurfaces.get(countryCode);
+            countrySpecificList.add(runwaySurfaceCount);
         }
 
         return countryRunways;

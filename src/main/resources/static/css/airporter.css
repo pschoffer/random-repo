@@ -92,7 +92,9 @@ table.report-result th {
     color: black;
     background-color: #4CAF50;
     height: 20px;
-}
-table.report-result th, td {
     border: 1px solid black;
+}
+table.report-result td {
+    border: 1px solid black;
+    vertical-align: top;
 }

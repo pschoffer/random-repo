@@ -22,6 +22,7 @@ TODO:
  ** Multiple Result -> show to choose
  ** Intelligent search (2 chars => code, otherwise name)
  ** AJAX
+ ** DB performance
 
  * DB Script
  ** Indexes for performance

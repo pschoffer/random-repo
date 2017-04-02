@@ -91,6 +91,5 @@ public class CountryDAOImplTest {
         final CountryAirportCount countryAirportCount = airportCounts.get(0);
         Assert.assertEquals(countryAirportCount.getCount(), expectedCount);
         Assert.assertEquals(countryAirportCount.getCountry(), expectedCountry);
-
     }
 }

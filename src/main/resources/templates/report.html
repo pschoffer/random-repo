@@ -18,13 +18,21 @@
                     <th>No.</th>
                     <th>Country</th>
                     <th>Airport Count</th>
+                    <th>Runway Surface</th>
                 </tr>
                 <tr th:each="country, loopStat : ${top}">
                     <td th:text="${loopStat.count}" />
                     <td th:text="${country.country.name}" />
                     <td th:text="${country.airportCount}" />
+                    <td>
+                        <span th:each="runway, runwayLoopStat : ${country.runways}"
+                              th:text="${runway.surface} + ': ' + ${runway.count} +
+                                        (${runwayLoopStat.last} ? '' : '; ')" />
+
+                    </td>
                 </tr>
                 <tr>
+                    <td>...</td>
                     <td>...</td>
                     <td>...</td>
                     <td>...</td>
@@ -33,6 +41,12 @@
                     <td th:text="${total} - ${loopStat.size} + ${loopStat.count}" />
                     <td th:text="${country.country.name}" />
                     <td th:text="${country.airportCount}" />
+                    <td>
+                        <span th:each="runway, runwayLoopStat : ${country.runways}"
+                              th:text="${runway.surface} + ': ' + ${runway.count} +
+                                        (${runwayLoopStat.last} ? '' : '; ')" />
+
+                    </td>
                 </tr>
             </table>
 

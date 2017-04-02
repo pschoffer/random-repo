@@ -1,5 +1,7 @@
 package airporter.model.entity;
 
+import airporter.model.JPANamedQuery;
+
 import javax.persistence.*;
 
 /**
@@ -7,6 +9,30 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "runways")
+@SqlResultSetMappings({
+        @SqlResultSetMapping(
+                name = "SurfaceCount",
+                columns = {
+                    @ColumnResult(name = "code", type = String.class),
+                    @ColumnResult(name = "surface", type = String.class),
+                    @ColumnResult(name = "counter", type = Integer.class)
+
+                }
+        )
+})
+@NamedNativeQueries({
+        @NamedNativeQuery(
+                name = JPANamedQuery.SELECT_RUNWAY_SURFACE_COUNT_PER_COUNTRY,
+                query = "select countries.code, runways.surface, count(runways.id) as counter " +
+                        "from runways, airports, countries " +
+                        "where runways.airport_ref = airports.id AND " +
+                        "       airports.iso_country = countries.code AND " +
+                        "       countries.code in (:countryCodes) " +
+                        "group by countries.code, runways.surface " +
+                        "order by count(runways.id) DESC, runways.surface",
+                resultSetMapping = "SurfaceCount"
+        )
+})
 public class Runway {
     @Id
     @Column(name = "id")

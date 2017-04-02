@@ -2,7 +2,9 @@ package airporter.service;
 
 import airporter.model.dao.AirportDAO;
 import airporter.model.dao.CountryDAO;
+import airporter.model.dao.RunwayDAO;
 import airporter.model.dao.dto.CountryAirportCount;
+import airporter.model.dao.dto.RunwaySurfaceCount;
 import airporter.model.entity.Airport;
 import airporter.model.entity.Country;
 import airporter.service.dto.CountryAirports;
@@ -29,11 +31,15 @@ import static org.mockito.Mockito.when;
 public class QueryServiceImplTest {
     private static final String EXISTING_COUNTRY = "CZ";
     private static final String NON_EXITING_COUNTRY = "BLA";
+    private static final String ONE_RUNWAY_COUNTRY = "CZ";
+    private static final String TWO_RUNWAY_COUNTRY = "US";
     private static final int LIMIT = 5;
     @Mock
     private CountryDAO countryDAO;
     @Mock
     private AirportDAO airportDAO;
+    @Mock
+    private RunwayDAO runwayDAO;
     @InjectMocks
     private final QueryService service = new QueryServiceImpl();
 
@@ -85,7 +91,36 @@ public class QueryServiceImplTest {
         final CountryRunway countryRunway = countriesWithTheMostAirports.get(0);
         Assert.assertEquals(countryRunway.getAirportCount(), expectedCount);
         Assert.assertEquals(countryRunway.getCountry(), expectedCountry);
-        //TODO count runways
+    }
+
+    @Test
+    public void whenWhenLookingForCountries_thenRunwaysAreMappedCorrectly() throws Exception {
+        // prepare
+        final Country oneRunwayCountry = new Country();
+        final Country twoRunwayCountry = new Country();
+        oneRunwayCountry.setCode(ONE_RUNWAY_COUNTRY);
+        twoRunwayCountry.setCode(TWO_RUNWAY_COUNTRY);
+        final List<CountryAirportCount> countryCounts = Arrays.asList(
+                new CountryAirportCount(0, oneRunwayCountry),
+                new CountryAirportCount(0, twoRunwayCountry)
+        );
+        when(countryDAO.findByHighestAirportCount(LIMIT)).thenReturn(countryCounts);
+        when(runwayDAO.findRunwaySurfaceCounts(Arrays.asList(ONE_RUNWAY_COUNTRY, TWO_RUNWAY_COUNTRY))).thenReturn(
+                Arrays.asList(
+                        new RunwaySurfaceCount(ONE_RUNWAY_COUNTRY, "A", 1),
+                        new RunwaySurfaceCount(TWO_RUNWAY_COUNTRY, "A", 1),
+                        new RunwaySurfaceCount(TWO_RUNWAY_COUNTRY, "B", 1)
+                )
+        );
+
+        // execute
+        final List<CountryRunway> countriesWithTheMostAirports = service.findCountriesHighestAirportCount(LIMIT);
+
+        // assert
+        final CountryRunway oneCountryRunway = countriesWithTheMostAirports.get(0);
+        final CountryRunway twoCountryRunway = countriesWithTheMostAirports.get(1);
+        Assert.assertEquals(oneCountryRunway.getRunways().size(), 1);
+        Assert.assertEquals(twoCountryRunway.getRunways().size(), 2);
     }
 
     @Test
