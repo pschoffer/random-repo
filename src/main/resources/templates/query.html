@@ -18,9 +18,18 @@
                     <tr>
                         <td>Country:</td>
                         <td><input type="text" th:field="*{country}" /></td>
-                        <td><button class="button-link" type="submit">Show</button></td>
+                        <td><button class="button-link" type="submit" name="action" value="find">Find</button></td>
                     </tr>
                 </table>
+                <div th:if="${not #lists.isEmpty(options)}">
+                    <ul class="options">
+                        <li th:each="option, stat : ${options}">
+                            <input type="radio" th:field="*{option}" th:value="${option.code}"/>
+                            <label th:text="${option.name} + ' [' + ${option.code} + ']'" />
+                        </li>
+                    </ul>
+                    <button class="button-link" type="submit" name="action" value="show">Show</button>
+                </div>
             </form>
             <div class="query-result" th:if="${country}">
                 <h3>Result</h3>

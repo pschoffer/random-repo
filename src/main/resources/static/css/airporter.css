@@ -98,3 +98,7 @@ table.report-result td {
     border: 1px solid black;
     vertical-align: top;
 }
+
+ul.options {
+    list-style-type: none;
+}

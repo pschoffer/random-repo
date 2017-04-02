@@ -21,6 +21,7 @@ import java.util.Collections;
 import java.util.List;
 
 import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /**
@@ -34,7 +35,10 @@ public class QueryControllerTest {
     private static final String COUNTRY_KEY = "country";
     private static final String MULTIPLE_OPTIONS_KEY = "options";
     private static final String COUNTRY = "CZ";
+    private static final String OTHER_COUNTRY = "US";
     private static final String OBJECT_NAME = "form";
+    private static final String ACTION_FIND = "find";
+    private static final String ACTION_SHOW = "show";
 
     @Mock
     private QueryService queryService;
@@ -42,6 +46,7 @@ public class QueryControllerTest {
     private QueryController controller = new QueryController();
     private Model model;
     private QueryForm inputForm;
+    private String action;
     @Mock
     private BindingResult bindResult;
 
@@ -50,6 +55,7 @@ public class QueryControllerTest {
         MockitoAnnotations.initMocks(this);
         model = new ExtendedModelMap();
         inputForm = new QueryForm();
+        action = ACTION_FIND;
     }
 
     @Test
@@ -69,7 +75,7 @@ public class QueryControllerTest {
         when(queryService.findCountries(COUNTRY)).thenReturn(Collections.singletonList(new Country()));
 
         // execute
-        controller.querySubmit(model, inputForm, bindResult);
+        controller.querySubmit(model, inputForm, bindResult, action);
 
         // assert
         final QueryForm form = (QueryForm) model.asMap().get(FORM);
@@ -86,7 +92,7 @@ public class QueryControllerTest {
         when(queryService.findCountries(COUNTRY)).thenThrow(exception);
 
         // execute
-        controller.querySubmit(model, inputForm, bindResult);
+        controller.querySubmit(model, inputForm, bindResult, action);
 
         // assert
         final String errorMsg = (String) model.asMap().get(ERROR_KEY);
@@ -102,7 +108,7 @@ public class QueryControllerTest {
         when(bindResult.getAllErrors()).thenReturn(Arrays.asList(errorObject));
 
         // execute
-        controller.querySubmit(model, inputForm, bindResult);
+        controller.querySubmit(model, inputForm, bindResult, action);
 
         // assert
         final String errorMsg = (String) model.asMap().get(ERROR_KEY);
@@ -119,7 +125,7 @@ public class QueryControllerTest {
         when(queryService.getCountryAirports(anyString())).thenReturn(new ArrayList<>());
 
         // execute
-        controller.querySubmit(model, inputForm, bindResult);
+        controller.querySubmit(model, inputForm, bindResult, action);
 
         // assert
         final Country country = (Country) model.asMap().get(COUNTRY_KEY);
@@ -138,10 +144,54 @@ public class QueryControllerTest {
         inputForm.setCountry(COUNTRY);
 
         // execute
-        controller.querySubmit(model, inputForm, bindResult);
+        controller.querySubmit(model, inputForm, bindResult, action);
 
         // assert
         final List countries = (List<Country>) model.asMap().get(MULTIPLE_OPTIONS_KEY);
         Assert.assertEquals(countries.size(), 2);
+    }
+
+    @Test
+    public void whenActionFind_thenSearchByCountry() throws Exception {
+        // prepare
+        inputForm.setCountry(COUNTRY);
+        inputForm.setOption(OTHER_COUNTRY);
+        when(queryService.findCountries(anyString())).thenReturn(Collections.singletonList(new Country()));
+
+        // execute
+        controller.querySubmit(model, inputForm, bindResult, action);
+
+        // assert
+        verify(queryService).findCountries(COUNTRY);
+    }
+
+    @Test
+    public void whenActionShow_thenSearchByOption() throws Exception {
+        // prepare
+        action = ACTION_SHOW;
+        inputForm.setCountry(COUNTRY);
+        inputForm.setOption(OTHER_COUNTRY);
+        when(queryService.findCountries(anyString())).thenReturn(Collections.singletonList(new Country()));
+
+        // execute
+        controller.querySubmit(model, inputForm, bindResult, action);
+
+        // assert
+        verify(queryService).findCountries(OTHER_COUNTRY);
+    }
+
+    @Test
+    public void whenActionShowButNoOption_thenSearchByCountry() throws Exception {
+        // prepare
+        action = ACTION_SHOW;
+        inputForm.setCountry(COUNTRY);
+        inputForm.setOption(null);
+        when(queryService.findCountries(anyString())).thenReturn(Collections.singletonList(new Country()));
+
+        // execute
+        controller.querySubmit(model, inputForm, bindResult, action);
+
+        // assert
+        verify(queryService).findCountries(COUNTRY);
     }
 }

@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7e498d0-70ef-4865-bd96-308294d00432" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/airporter/controller/QueryController.java" afterPath="$PROJECT_DIR$/src/main/java/airporter/controller/QueryController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/airporter/model/dao/CountryDAO.java" afterPath="$PROJECT_DIR$/src/main/java/airporter/model/dao/CountryDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/airporter/model/dao/Impl/CountryDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/airporter/model/dao/Impl/CountryDAOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/airporter/service/QueryService.java" afterPath="$PROJECT_DIR$/src/main/java/airporter/service/QueryService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/airporter/service/impl/QueryServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/airporter/service/impl/QueryServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/airporter/form/QueryForm.java" afterPath="$PROJECT_DIR$/src/main/java/airporter/form/QueryForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/css/airporter.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/airporter.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/query.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/query.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/airporter/controller/QueryControllerTest.java" afterPath="$PROJECT_DIR$/src/test/java/airporter/controller/QueryControllerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/airporter/model/dao/Impl/CountryDAOImplTest.java" afterPath="$PROJECT_DIR$/src/test/java/airporter/model/dao/Impl/CountryDAOImplTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/airporter/service/QueryServiceImplTest.java" afterPath="$PROJECT_DIR$/src/test/java/airporter/service/QueryServiceImplTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -142,14 +139,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="QueryController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/airporter/controller/QueryController.java">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="49" column="16" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="126">
+              <caret line="7" column="110" lean-forward="false" selection-start-line="7" selection-start-column="107" selection-end-line="7" selection-end-column="111" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -175,12 +170,14 @@
       <find>country_info</find>
       <find>query-result</find>
       <find>when</find>
+      <find>model, inputForm, bindResult</find>
     </findStrings>
     <replaceStrings>
       <replace>env</replace>
       <replace>errorMsg</replace>
       <replace>expectedError</replace>
       <replace>FORM_KEY</replace>
+      <replace>model, inputForm, bindResult, action</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -512,7 +509,6 @@
         <option value="$PROJECT_DIR$/src/main/java/airporter/service/exception/CountryNotFoundException.java" />
         <option value="$PROJECT_DIR$/src/main/java/airporter/exception/AirporterException.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/fragments/error.html" />
-        <option value="$PROJECT_DIR$/src/main/java/airporter/form/QueryForm.java" />
         <option value="$PROJECT_DIR$/src/main/java/airporter/service/impl/CountryServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/airporter/model/dao/CountryDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/airporter/model/dao/AirportDAO.java" />
@@ -531,22 +527,23 @@
         <option value="$PROJECT_DIR$/src/main/java/airporter/model/dao/dto/RunwaySurfaceCount.java" />
         <option value="$PROJECT_DIR$/src/test/java/airporter/model/dao/Impl/RunwayDAOImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/airporter/model/dao/Impl/RunwayDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/airporter.css" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/report.html" />
         <option value="$PROJECT_DIR$/src/main/java/airporter/model/entity/Runway.java" />
         <option value="$PROJECT_DIR$/src/main/java/airporter/model/entity/Airport.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/airporter/service/QueryService.java" />
         <option value="$PROJECT_DIR$/src/main/java/airporter/model/JPANamedQuery.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/query.html" />
         <option value="$PROJECT_DIR$/src/main/java/airporter/model/entity/Country.java" />
         <option value="$PROJECT_DIR$/src/main/java/airporter/model/dao/CountryDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/airporter/model/dao/Impl/CountryDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/airporter/model/dao/Impl/CountryDAOImplTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/airporter/service/QueryServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/airporter/controller/QueryController.java" />
-        <option value="$PROJECT_DIR$/src/test/java/airporter/controller/QueryControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/airporter/service/impl/QueryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/airporter/form/QueryForm.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/airporter.css" />
+        <option value="$PROJECT_DIR$/src/test/java/airporter/controller/QueryControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/query.html" />
+        <option value="$PROJECT_DIR$/src/main/java/airporter/controller/QueryController.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -928,6 +925,32 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="airporter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="random-repo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1215,6 +1238,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="form" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="airporter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="random-repo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="airporter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1230,7 +1283,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.5253456" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/pavel/git/random-repo/src/main/java/airporter/service/impl/QueryServiceImpl.java&#10;CountryDa&#9;PSI&#9;JAVA://airporter.model.dao.CountryDAO&#10;CountryAir&#9;FILE&#9;file:///home/pavel/git/random-repo/src/main/java/airporter/service/dto/CountryAirports.java&#10;QueryServi&#9;FILE&#9;file:///home/pavel/git/random-repo/src/main/java/airporter/service/impl/QueryServiceImpl.java&#10;QuerySer&#9;FILE&#9;file:///home/pavel/git/random-repo/src/main/java/airporter/service/impl/QueryServiceImpl.java&#10;Rea&#9;FILE&#9;file:///home/pavel/git/random-repo/README.md&#10;Read&#9;FILE&#9;file:///home/pavel/git/random-repo/README.md&#10;READ&#9;FILE&#9;file:///home/pavel/git/random-repo/README.md&#10;Airport&#9;FILE&#9;file:///home/pavel/git/random-repo/src/main/java/airporter/model/entity/Airport.java&#10;Re&#9;FILE&#9;file:///home/pavel/git/random-repo/README.md&#10;rea&#9;FILE&#9;file:///home/pavel/git/random-repo/README.md&#10;README&#9;FILE&#9;file:///home/pavel/git/random-repo/README.md&#10;REa&#9;FILE&#9;file:///home/pavel/git/random-repo/README.md&#10;read&#9;FILE&#9;file:///home/pavel/git/random-repo/README.md&#10;REA&#9;FILE&#9;file:///home/pavel/git/random-repo/README.md&#10;AirportDa&#9;FILE&#9;file:///home/pavel/git/random-repo/src/main/java/airporter/model/dao/AirportDAO.java&#10;QueryForm&#9;PSI&#9;JAVA://airporter.form.QueryForm" />
+    <property name="SearchEverywhereHistoryKey" value="Rea&#9;FILE&#9;file:///home/pavel/git/random-repo/README.md&#10;Quer&#9;FILE&#9;file:///home/pavel/git/random-repo/src/main/java/airporter/controller/QueryController.java&#10;QueryFo&#9;FILE&#9;file:///home/pavel/git/random-repo/src/main/java/airporter/form/QueryForm.java&#10;CountryDa&#9;PSI&#9;JAVA://airporter.model.dao.CountryDAO&#10;CountryAir&#9;FILE&#9;file:///home/pavel/git/random-repo/src/main/java/airporter/service/dto/CountryAirports.java&#10;QueryServi&#9;FILE&#9;file:///home/pavel/git/random-repo/src/main/java/airporter/service/impl/QueryServiceImpl.java&#10;QuerySer&#9;FILE&#9;file:///home/pavel/git/random-repo/src/main/java/airporter/service/impl/QueryServiceImpl.java&#10;Read&#9;FILE&#9;file:///home/pavel/git/random-repo/README.md&#10;READ&#9;FILE&#9;file:///home/pavel/git/random-repo/README.md&#10;Airport&#9;FILE&#9;file:///home/pavel/git/random-repo/src/main/java/airporter/model/entity/Airport.java&#10;Re&#9;FILE&#9;file:///home/pavel/git/random-repo/README.md&#10;rea&#9;FILE&#9;file:///home/pavel/git/random-repo/README.md&#10;README&#9;FILE&#9;file:///home/pavel/git/random-repo/README.md&#10;REa&#9;FILE&#9;file:///home/pavel/git/random-repo/README.md&#10;read&#9;FILE&#9;file:///home/pavel/git/random-repo/README.md&#10;REA&#9;FILE&#9;file:///home/pavel/git/random-repo/README.md&#10;AirportDa&#9;FILE&#9;file:///home/pavel/git/random-repo/src/main/java/airporter/model/dao/AirportDAO.java&#10;QueryForm&#9;PSI&#9;JAVA://airporter.form.QueryForm" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="TestNG" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -1268,39 +1321,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Run">
-    <configuration default="false" name="QueryControllerTest.whenDataFound_thenPassToModel" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="airporter.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="airporter_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="airporter.controller" />
-      <option name="MAIN_CLASS_NAME" value="airporter.controller.QueryControllerTest" />
-      <option name="METHOD_NAME" value="whenDataFound_thenPassToModel" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
     <configuration default="false" name="QueryControllerTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1334,72 +1354,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="false" name="QueryControllerTest.wQuerySubmit_thenPassTheForm" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="airporter.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="airporter_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="airporter.controller" />
-      <option name="MAIN_CLASS_NAME" value="airporter.controller.QueryControllerTest" />
-      <option name="METHOD_NAME" value="wQuerySubmit_thenPassTheForm" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
-    <configuration default="false" name="QueryControllerTest.whenMoreCountries_thenPassToModel" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="airporter.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="airporter_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="airporter.controller" />
-      <option name="MAIN_CLASS_NAME" value="airporter.controller.QueryControllerTest" />
-      <option name="METHOD_NAME" value="whenMoreCountries_thenPassToModel" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
     <configuration default="false" name="QueryServiceImplTest.whenShortIdent_thenJustTryCode" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1414,6 +1368,105 @@
       <option name="PACKAGE_NAME" value="airporter.service" />
       <option name="MAIN_CLASS_NAME" value="airporter.service.QueryServiceImplTest" />
       <option name="METHOD_NAME" value="whenShortIdent_thenJustTryCode" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="false" name="QueryControllerTest.whenActionFind_thenSearchByCountry" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="airporter.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="airporter_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="airporter.controller" />
+      <option name="MAIN_CLASS_NAME" value="airporter.controller.QueryControllerTest" />
+      <option name="METHOD_NAME" value="whenActionFind_thenSearchByCountry" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="false" name="QueryControllerTest.whenActionShow_thenSearchByOption" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="airporter.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="airporter_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="airporter.controller" />
+      <option name="MAIN_CLASS_NAME" value="airporter.controller.QueryControllerTest" />
+      <option name="METHOD_NAME" value="whenActionShow_thenSearchByOption" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="false" name="QueryControllerTest.whenActionShowButNoOption_thenSearchByCountry" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="airporter.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="airporter_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="airporter.controller" />
+      <option name="MAIN_CLASS_NAME" value="airporter.controller.QueryControllerTest" />
+      <option name="METHOD_NAME" value="whenActionShowButNoOption_thenSearchByCountry" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -1717,19 +1770,19 @@
       <item index="0" class="java.lang.String" itemvalue="Application.Run" />
       <item index="1" class="java.lang.String" itemvalue="Gradle.Build" />
       <item index="2" class="java.lang.String" itemvalue="TestNG.FullTests" />
-      <item index="3" class="java.lang.String" itemvalue="TestNG.QueryControllerTest.whenDataFound_thenPassToModel" />
-      <item index="4" class="java.lang.String" itemvalue="TestNG.QueryControllerTest" />
-      <item index="5" class="java.lang.String" itemvalue="TestNG.QueryControllerTest.wQuerySubmit_thenPassTheForm" />
-      <item index="6" class="java.lang.String" itemvalue="TestNG.QueryControllerTest.whenMoreCountries_thenPassToModel" />
-      <item index="7" class="java.lang.String" itemvalue="TestNG.QueryServiceImplTest.whenShortIdent_thenJustTryCode" />
+      <item index="3" class="java.lang.String" itemvalue="TestNG.QueryControllerTest" />
+      <item index="4" class="java.lang.String" itemvalue="TestNG.QueryServiceImplTest.whenShortIdent_thenJustTryCode" />
+      <item index="5" class="java.lang.String" itemvalue="TestNG.QueryControllerTest.whenActionFind_thenSearchByCountry" />
+      <item index="6" class="java.lang.String" itemvalue="TestNG.QueryControllerTest.whenActionShow_thenSearchByOption" />
+      <item index="7" class="java.lang.String" itemvalue="TestNG.QueryControllerTest.whenActionShowButNoOption_thenSearchByCountry" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="TestNG.QueryServiceImplTest.whenShortIdent_thenJustTryCode" />
-        <item index="1" class="java.lang.String" itemvalue="TestNG.QueryControllerTest.whenMoreCountries_thenPassToModel" />
-        <item index="2" class="java.lang.String" itemvalue="TestNG.QueryControllerTest.whenDataFound_thenPassToModel" />
+        <item index="0" class="java.lang.String" itemvalue="TestNG.QueryControllerTest.whenActionShowButNoOption_thenSearchByCountry" />
+        <item index="1" class="java.lang.String" itemvalue="TestNG.QueryControllerTest.whenActionShow_thenSearchByOption" />
+        <item index="2" class="java.lang.String" itemvalue="TestNG.QueryControllerTest.whenActionFind_thenSearchByCountry" />
         <item index="3" class="java.lang.String" itemvalue="TestNG.QueryControllerTest" />
-        <item index="4" class="java.lang.String" itemvalue="TestNG.QueryControllerTest.wQuerySubmit_thenPassTheForm" />
+        <item index="4" class="java.lang.String" itemvalue="TestNG.QueryServiceImplTest.whenShortIdent_thenJustTryCode" />
       </list>
     </recent_temporary>
   </component>
@@ -1750,32 +1803,32 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FullTests - 2017.04.02 at 19h 26m 00s.xml">
-      <configuration name="FullTests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="FullTests - 2017.04.02 at 19h 27m 34s.xml">
-      <configuration name="FullTests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="FullTests - 2017.04.02 at 19h 29m 22s.xml">
-      <configuration name="FullTests" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="FullTests - 2017.04.02 at 19h 32m 18s.xml">
       <configuration name="FullTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="QueryControllerTest_whenDataFound_thenPassToModel - 2017.04.02 at 19h 26m 54s.xml">
-      <configuration name="QueryControllerTest.whenDataFound_thenPassToModel" configurationId="TestNG" />
+    <history-entry file="QueryControllerTest - 2017.04.02 at 19h 58m 38s.xml">
+      <configuration name="QueryControllerTest" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="QueryControllerTest_whenDataFound_thenPassToModel - 2017.04.02 at 19h 27m 09s.xml">
-      <configuration name="QueryControllerTest.whenDataFound_thenPassToModel" configurationId="TestNG" />
+    <history-entry file="QueryControllerTest - 2017.04.02 at 20h 01m 09s.xml">
+      <configuration name="QueryControllerTest" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="QueryControllerTest_whenMoreCountries_thenPassToModel - 2017.04.02 at 19h 28m 26s.xml">
-      <configuration name="QueryControllerTest.whenMoreCountries_thenPassToModel" configurationId="TestNG" />
+    <history-entry file="QueryControllerTest_whenActionFind_thenSearchByCountry - 2017.04.02 at 20h 08m 37s.xml">
+      <configuration name="QueryControllerTest.whenActionFind_thenSearchByCountry" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="QueryControllerTest_whenMoreCountries_thenPassToModel - 2017.04.02 at 19h 28m 58s.xml">
-      <configuration name="QueryControllerTest.whenMoreCountries_thenPassToModel" configurationId="TestNG" />
+    <history-entry file="QueryControllerTest_whenActionFind_thenSearchByCountry - 2017.04.02 at 20h 09m 39s.xml">
+      <configuration name="QueryControllerTest.whenActionFind_thenSearchByCountry" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="QueryServiceImplTest_whenShortIdent_thenJustTryCode - 2017.04.02 at 19h 30m 45s.xml">
-      <configuration name="QueryServiceImplTest.whenShortIdent_thenJustTryCode" configurationId="TestNG" />
+    <history-entry file="QueryControllerTest_whenActionShowButNoOption_thenSearchByCountry - 2017.04.02 at 20h 11m 35s.xml">
+      <configuration name="QueryControllerTest.whenActionShowButNoOption_thenSearchByCountry" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="QueryControllerTest_whenActionShowButNoOption_thenSearchByCountry - 2017.04.02 at 20h 12m 09s.xml">
+      <configuration name="QueryControllerTest.whenActionShowButNoOption_thenSearchByCountry" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="QueryControllerTest_whenActionShow_thenSearchByOption - 2017.04.02 at 20h 10m 25s.xml">
+      <configuration name="QueryControllerTest.whenActionShow_thenSearchByOption" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="QueryControllerTest_whenActionShow_thenSearchByOption - 2017.04.02 at 20h 10m 38s.xml">
+      <configuration name="QueryControllerTest.whenActionShow_thenSearchByOption" configurationId="TestNG" />
     </history-entry>
     <history-entry file="QueryServiceImplTest_whenShortIdent_thenJustTryCode - 2017.04.02 at 19h 31m 56s.xml">
       <configuration name="QueryServiceImplTest.whenShortIdent_thenJustTryCode" configurationId="TestNG" />
@@ -1795,7 +1848,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299389" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299389" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299389" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299389" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1808,7 +1861,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39918533" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39918533" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1855,49 +1908,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/airporter/service/impl/QueryServiceImpl.java</url>
-          <line>52</line>
-          <properties />
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/airporter/controller/ReportController.java</url>
           <line>33</line>
           <properties />
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/airporter/model/dao/Impl/AirportDAOImpl.java</url>
-          <line>24</line>
-          <properties />
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/airporter/model/dao/Impl/CountryDAOImpl.java</url>
-          <line>35</line>
-          <properties />
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/airporter/controller/QueryController.java</url>
-          <line>50</line>
+          <line>48</line>
           <properties />
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/airporter/controller/QueryController.java</url>
-          <line>61</line>
-          <properties />
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/airporter/service/impl/QueryServiceImpl.java</url>
-          <line>33</line>
-          <properties />
-          <option name="timeStamp" value="41" />
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="42" />
+      <option name="time" value="43" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2079,6 +2102,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-108">
           <caret line="29" column="32" lean-forward="false" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+          <folding>
+            <marker date="1490900321998" expanded="false" signature="0:620" ph="/.../" />
+            <marker date="1490900321998" expanded="false" signature="670:776" ph="..." />
+            <marker date="1490900321998" expanded="true" signature="778:1480" ph="/**...*/" />
+            <marker date="1490900321998" expanded="true" signature="1531:1638" ph="/**...*/" />
+            <marker date="1490900321998" expanded="true" signature="1706:1859" ph="/**...*/" />
+            <marker date="1490900321998" expanded="true" signature="1883:2890" ph="/**...*/" />
+            <marker date="1490900321998" expanded="true" signature="2926:3160" ph="/**...*/" />
+            <marker date="1490900321998" expanded="true" signature="3203:3640" ph="/**...*/" />
+            <marker date="1490900321998" expanded="true" signature="3705:3864" ph="/**...*/" />
+            <marker date="1490900321998" expanded="true" signature="3920:4171" ph="/**...*/" />
+            <marker date="1490900321998" expanded="true" signature="4209:4461" ph="/**...*/" />
+            <marker date="1490900321998" expanded="true" signature="4513:4841" ph="/**...*/" />
+            <marker date="1490900321998" expanded="true" signature="4907:5116" ph="/**...*/" />
+            <marker date="1490900321998" expanded="true" signature="5162:5378" ph="/**...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2110,22 +2149,6 @@
           <folding>
             <marker date="1491062642515" expanded="true" signature="37:92" ph="..." />
             <marker date="1491062642515" expanded="true" signature="94:132" ph="/**...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/airporter/form/QueryForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <marker date="1491057333047" expanded="true" signature="32:111" ph="..." />
-            <marker date="1491057333047" expanded="true" signature="113:151" ph="/**...*/" />
-            <marker date="1491057333047" expanded="true" signature="181:214" ph="@{...}" />
-            <marker date="1491057333047" expanded="true" signature="274:285" ph=" { " />
-            <marker date="1491057333047" expanded="true" signature="300:306" ph=" }" />
-            <marker date="1491057333047" expanded="false" signature="356:367" ph=" { " />
-            <marker date="1491057333047" expanded="false" signature="390:396" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -2326,6 +2349,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
           <caret line="51" column="18" lean-forward="false" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
+          <folding>
+            <marker date="1490988705133" expanded="false" signature="0:472" ph="/.../" />
+            <marker date="1490988705133" expanded="false" signature="508:636" ph="..." />
+            <marker date="1490988705133" expanded="true" signature="638:1743" ph="/**...*/" />
+            <marker date="1490988705133" expanded="true" signature="1744:1775" ph="@{...}" />
+            <marker date="1490988705133" expanded="true" signature="1814:1888" ph="/**...*/" />
+            <marker date="1490988705133" expanded="true" signature="1910:1983" ph="/**...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2684,13 +2715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/airporter.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="98" column="24" lean-forward="false" selection-start-line="98" selection-start-column="24" selection-end-line="98" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/report.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -2711,19 +2735,6 @@
             <marker date="1491136431010" expanded="true" signature="1640:2170" ph="..." />
             <marker date="1491136431010" expanded="true" signature="1872:2148" ph="..." />
             <marker date="1491136431010" expanded="true" signature="1957:2121" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/airporter/model/dao/Impl/AirportDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="25" column="43" lean-forward="false" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
-          <folding>
-            <marker date="1491114633766" expanded="false" signature="42:408" ph="..." />
-            <marker date="1491114633766" expanded="true" signature="410:448" ph="/**...*/" />
-            <marker date="1491114633766" expanded="true" signature="515:549" ph="@{...}" />
-            <marker date="1491114633766" expanded="true" signature="668:924" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2773,14 +2784,6 @@
             <marker date="1491149076742" expanded="false" signature="2365:2376" ph=" { " />
             <marker date="1491149076742" expanded="false" signature="2399:2405" ph=" }" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2855,33 +2858,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/query.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="60" lean-forward="false" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
-          <folding>
-            <marker date="1491152049078" expanded="true" signature="57:2366" ph="..." />
-            <marker date="1491152049078" expanded="true" signature="64:308" ph="..." />
-            <marker date="1491152049078" expanded="true" signature="257:300" ph="..." />
-            <marker date="1491152049078" expanded="true" signature="315:2358" ph="..." />
-            <marker date="1491152049078" expanded="true" signature="338:2294" ph="..." />
-            <marker date="1491152049078" expanded="true" signature="424:2283" ph="..." />
-            <marker date="1491152049078" expanded="true" signature="639:967" ph="..." />
-            <marker date="1491152049078" expanded="true" signature="663:947" ph="..." />
-            <marker date="1491152049078" expanded="true" signature="688:922" ph="..." />
-            <marker date="1491152049078" expanded="true" signature="1025:2267" ph="..." />
-            <marker date="1491152049078" expanded="true" signature="1102:2248" ph="..." />
-            <marker date="1491152049078" expanded="true" signature="1127:1229" ph="..." />
-            <marker date="1491152049078" expanded="true" signature="1254:1353" ph="..." />
-            <marker date="1491152049078" expanded="true" signature="1418:1540" ph="..." />
-            <marker date="1491152049078" expanded="true" signature="1606:2223" ph="..." />
-            <marker date="1491152049078" expanded="true" signature="1635:2197" ph="..." />
-            <marker date="1491152049078" expanded="true" signature="1831:2167" ph="..." />
-            <marker date="1491152049078" expanded="true" signature="1918:2130" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/airporter/model/entity/Country.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -2903,25 +2879,6 @@
             <marker date="1491152290050" expanded="false" signature="2581:2587" ph=" }" />
             <marker date="1491152290050" expanded="false" signature="2631:2642" ph=" { " />
             <marker date="1491152290050" expanded="false" signature="2659:2665" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/airporter/model/dao/Impl/CountryDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-          <folding>
-            <marker date="1491152645494" expanded="true" signature="42:648" ph="..." />
-            <marker date="1491152645494" expanded="true" signature="469:621" ph="..." />
-            <marker date="1491152645494" expanded="true" signature="650:688" ph="/**...*/" />
-            <marker date="1491152645494" expanded="true" signature="758:792" ph="@{...}" />
-            <marker date="1491152645494" expanded="true" signature="905:1153" ph="{...}" />
-            <marker date="1491152645494" expanded="true" signature="1219:1597" ph="{...}" />
-            <marker date="1491152645494" expanded="true" signature="1694:1963" ph="{...}" />
-            <marker date="1491152645494" expanded="true" signature="2059:2332" ph="{...}" />
-            <marker date="1491152645494" expanded="true" signature="2412:2947" ph="{...}" />
-            <marker date="1491152645494" expanded="true" signature="2995:3303" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2954,26 +2911,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/airporter/controller/QueryControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="95" column="9" lean-forward="true" selection-start-line="95" selection-start-column="9" selection-end-line="95" selection-end-column="9" />
-          <folding>
-            <marker date="1491154133346" expanded="false" signature="38:795" ph="..." />
-            <marker date="1491154133346" expanded="true" signature="797:835" ph="/**...*/" />
-            <marker date="1491154133346" expanded="true" signature="1552:1680" ph="{...}" />
-            <marker date="1491154133346" expanded="true" signature="1762:1951" ph="{...}" />
-            <marker date="1491154133346" expanded="true" signature="2027:2437" ph="{...}" />
-            <marker date="1491154133346" expanded="true" signature="2522:3031" ph="{...}" />
-            <marker date="1491154133346" expanded="true" signature="3111:3623" ph="{...}" />
-            <marker date="1491154133346" expanded="true" signature="3700:4505" ph="{...}" />
-            <marker date="1491154133346" expanded="true" signature="4511:4551" ph="@{...}" />
-            <marker date="1491154133346" expanded="true" signature="4521:4551" ph="/unchecked/" />
-            <marker date="1491154133346" expanded="true" signature="4621:5036" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/airporter/service/QueryServiceImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -2994,10 +2931,85 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/airporter/form/QueryForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+          <folding>
+            <marker date="1491154887670" expanded="true" signature="32:111" ph="..." />
+            <marker date="1491154887670" expanded="true" signature="113:151" ph="/**...*/" />
+            <marker date="1491154887670" expanded="true" signature="181:214" ph="@{...}" />
+            <marker date="1491154887670" expanded="true" signature="302:313" ph=" { " />
+            <marker date="1491154887670" expanded="true" signature="328:334" ph=" }" />
+            <marker date="1491154887670" expanded="false" signature="384:395" ph=" { " />
+            <marker date="1491154887670" expanded="false" signature="418:424" ph=" }" />
+            <marker date="1491154887670" expanded="true" signature="455:466" ph=" { " />
+            <marker date="1491154887670" expanded="true" signature="480:486" ph=" }" />
+            <marker date="1491154887670" expanded="true" signature="534:545" ph=" { " />
+            <marker date="1491154887670" expanded="true" signature="566:572" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/airporter.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <folding>
+            <marker date="1491155118022" expanded="true" signature="11:62" ph="{...}" />
+            <marker date="1491155118022" expanded="true" signature="73:155" ph="{...}" />
+            <marker date="1491155118022" expanded="true" signature="165:276" ph="{...}" />
+            <marker date="1491155118022" expanded="true" signature="289:333" ph="{...}" />
+            <marker date="1491155118022" expanded="true" signature="347:463" ph="{...}" />
+            <marker date="1491155118022" expanded="true" signature="484:536" ph="{...}" />
+            <marker date="1491155118022" expanded="true" signature="585:737" ph="{...}" />
+            <marker date="1491155118022" expanded="true" signature="758:813" ph="{...}" />
+            <marker date="1491155118022" expanded="true" signature="828:872" ph="{...}" />
+            <marker date="1491155118022" expanded="true" signature="885:1014" ph="{...}" />
+            <marker date="1491155118022" expanded="true" signature="1025:1179" ph="{...}" />
+            <marker date="1491155118022" expanded="true" signature="1303:1376" ph="{...}" />
+            <marker date="1491155118022" expanded="true" signature="1400:1499" ph="{...}" />
+            <marker date="1491155118022" expanded="true" signature="1523:1580" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/airporter/model/dao/Impl/AirportDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <marker date="1491114633766" expanded="false" signature="42:408" ph="..." />
+            <marker date="1491114633766" expanded="true" signature="410:448" ph="/**...*/" />
+            <marker date="1491114633766" expanded="true" signature="515:549" ph="@{...}" />
+            <marker date="1491114633766" expanded="true" signature="668:924" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/airporter/model/dao/Impl/CountryDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <marker date="1491152645494" expanded="true" signature="42:648" ph="..." />
+            <marker date="1491152645494" expanded="true" signature="469:621" ph="..." />
+            <marker date="1491152645494" expanded="true" signature="650:688" ph="/**...*/" />
+            <marker date="1491152645494" expanded="true" signature="758:792" ph="@{...}" />
+            <marker date="1491152645494" expanded="true" signature="905:1153" ph="{...}" />
+            <marker date="1491152645494" expanded="true" signature="1219:1597" ph="{...}" />
+            <marker date="1491152645494" expanded="true" signature="1694:1963" ph="{...}" />
+            <marker date="1491152645494" expanded="true" signature="2059:2332" ph="{...}" />
+            <marker date="1491152645494" expanded="true" signature="2412:2947" ph="{...}" />
+            <marker date="1491152645494" expanded="true" signature="2995:3303" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/airporter/service/impl/QueryServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="37" column="35" lean-forward="false" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
+        <state relative-caret-position="88">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
             <marker date="1491154309122" expanded="true" signature="40:606" ph="..." />
             <marker date="1491154309122" expanded="true" signature="608:646" ph="/**...*/" />
@@ -3012,13 +3024,80 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/airporter/controller/QueryControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
+          <folding>
+            <marker date="1491156690142" expanded="false" signature="38:837" ph="..." />
+            <marker date="1491156690142" expanded="true" signature="839:877" ph="/**...*/" />
+            <marker date="1491156690142" expanded="true" signature="1783:1941" ph="{...}" />
+            <marker date="1491156690142" expanded="true" signature="2023:2212" ph="{...}" />
+            <marker date="1491156690142" expanded="true" signature="2288:2706" ph="{...}" />
+            <marker date="1491156690142" expanded="true" signature="2791:3308" ph="{...}" />
+            <marker date="1491156690142" expanded="true" signature="3388:3908" ph="{...}" />
+            <marker date="1491156690142" expanded="true" signature="3985:4798" ph="{...}" />
+            <marker date="1491156690142" expanded="true" signature="4804:4844" ph="@{...}" />
+            <marker date="1491156690142" expanded="true" signature="4814:4844" ph="/unchecked/" />
+            <marker date="1491156690142" expanded="true" signature="4914:5337" ph="{...}" />
+            <marker date="1491156690142" expanded="true" signature="5419:5798" ph="{...}" />
+            <marker date="1491156690142" expanded="true" signature="5879:6294" ph="{...}" />
+            <marker date="1491156690142" expanded="true" signature="6387:6787" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/query.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="26" column="94" lean-forward="false" selection-start-line="26" selection-start-column="94" selection-end-line="26" selection-end-column="94" />
+          <folding>
+            <marker date="1491157274646" expanded="true" signature="57:2932" ph="..." />
+            <marker date="1491157274646" expanded="true" signature="64:308" ph="..." />
+            <marker date="1491157274646" expanded="true" signature="257:300" ph="..." />
+            <marker date="1491157274646" expanded="true" signature="315:2924" ph="..." />
+            <marker date="1491157274646" expanded="true" signature="338:2860" ph="..." />
+            <marker date="1491157274646" expanded="true" signature="424:2849" ph="..." />
+            <marker date="1491157274646" expanded="true" signature="639:1533" ph="..." />
+            <marker date="1491157274646" expanded="true" signature="663:974" ph="..." />
+            <marker date="1491157274646" expanded="true" signature="688:949" ph="..." />
+            <marker date="1491157274646" expanded="true" signature="1035:1513" ph="..." />
+            <marker date="1491157274646" expanded="true" signature="1076:1387" ph="..." />
+            <marker date="1491157274646" expanded="true" signature="1141:1361" ph="..." />
+            <marker date="1491157274646" expanded="true" signature="1591:2833" ph="..." />
+            <marker date="1491157274646" expanded="true" signature="1668:2814" ph="..." />
+            <marker date="1491157274646" expanded="true" signature="1693:1795" ph="..." />
+            <marker date="1491157274646" expanded="true" signature="1820:1919" ph="..." />
+            <marker date="1491157274646" expanded="true" signature="1984:2106" ph="..." />
+            <marker date="1491157274646" expanded="true" signature="2172:2789" ph="..." />
+            <marker date="1491157274646" expanded="true" signature="2201:2763" ph="..." />
+            <marker date="1491157274646" expanded="true" signature="2397:2733" ph="..." />
+            <marker date="1491157274646" expanded="true" signature="2484:2696" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/airporter/controller/QueryController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="49" column="16" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+        <state relative-caret-position="288">
+          <caret line="56" column="50" lean-forward="false" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1491157274694" expanded="true" signature="38:809" ph="..." />
+            <marker date="1491157274694" expanded="true" signature="811:850" ph="/**...*/" />
+            <marker date="1491157274694" expanded="true" signature="1357:1443" ph="{...}" />
+            <marker date="1491157274694" expanded="true" signature="1661:2288" ph="{...}" />
+            <marker date="1491157274694" expanded="true" signature="2368:2547" ph="{...}" />
+            <marker date="1491157274694" expanded="true" signature="2659:3214" ph="{...}" />
+            <marker date="1491157274694" expanded="true" signature="3282:3599" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="110" lean-forward="false" selection-start-line="7" selection-start-column="107" selection-end-line="7" selection-end-column="111" />
+          <folding />
         </state>
       </provider>
     </entry>

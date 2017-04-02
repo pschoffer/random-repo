@@ -18,9 +18,6 @@ Choosing Reports will print the following:
 TODO:
 
  * Query
- ** Fuzzy search
- ** Multiple Result -> show to choose
- ** Intelligent search (2 chars => code, otherwise name)
  ** AJAX
 
  * Report
@@ -28,6 +25,4 @@ TODO:
 
  * DB Script
  ** Indexes for performance
-
- * docker compose for DB
-    docker run -d -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=airporter --name mysql -p 3306:3306 mysql:latest
+ ** docker compose for DB

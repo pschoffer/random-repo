@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 import java.util.HashMap;
@@ -29,6 +30,7 @@ public class QueryController {
     private final static String COUNTRY_KEY = "country";
     private final static String AIRPORTS_KEY = "airports";
     private static final String MULTIPLE_OPTIONS_KEY = "options";
+    private static final String ACTION_FIND = "find";
 
     @Autowired
     private QueryService queryService;
@@ -40,15 +42,18 @@ public class QueryController {
     }
 
     @PostMapping("/query")
-    public String querySubmit(Model model, @Valid QueryForm form, BindingResult bindingResult) {
+    public String querySubmit(Model model, @Valid QueryForm form, BindingResult bindingResult,
+                              @RequestParam(value = "action", required = true) String action) {
         model.addAttribute(FORM_KEY, form);
 
         if (bindingResult.hasErrors()) {
             final String errorMsg = getErrorMsg(bindingResult);
             model.addAttribute(ERROR_KEY, errorMsg);
         } else {
+            final String countryIdent = getCountryIdent(action, form);
+
             try {
-                final Map<String, Object> attributes = getModelAttributes(form.getCountry());
+                final Map<String, Object> attributes = getModelAttributes(countryIdent);
                 model.addAllAttributes(attributes);
             } catch (final CountryNotFoundException e) {
                 model.addAttribute(ERROR_KEY, e.getMessage());
@@ -56,6 +61,14 @@ public class QueryController {
         }
 
         return "query";
+    }
+
+    private String getCountryIdent(final String action, final QueryForm form) {
+        if (action.equals(ACTION_FIND) || form.getOption() == null) {
+            return form.getCountry();
+        } else {
+            return form.getOption();
+        }
     }
 
     private Map<String, Object> getModelAttributes(final String countryIdent) throws CountryNotFoundException {
