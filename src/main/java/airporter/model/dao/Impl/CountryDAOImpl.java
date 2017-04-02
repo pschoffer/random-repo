@@ -24,7 +24,6 @@ public class CountryDAOImpl implements CountryDAO {
 
     @Override
     public Country getByCodeOrName(final String identification) {
-        final CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         final TypedQuery<Country> namedQuery = entityManager.createNamedQuery(
                 JPANamedQuery.SELECT_COUNTRY_BY_CODE_OR_NAME, Country.class);
         namedQuery.setParameter("code", identification);

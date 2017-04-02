@@ -12,7 +12,7 @@ import javax.persistence.*;
 @NamedQueries({
         @NamedQuery(
                 name = JPANamedQuery.SELECT_COUNTRY_BY_CODE_OR_NAME,
-                query = "from Country where code = :code or name = :name"
+                query = "from Country where lower(code) = lower(:code) or lower(name) = lower(:name)"
         )
 })
 public class Country {
