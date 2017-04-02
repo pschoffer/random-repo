@@ -2,6 +2,7 @@ package airporter.model.dao.Impl;
 
 import airporter.model.JPANamedQuery;
 import airporter.model.dao.RunwayDAO;
+import airporter.model.dao.dto.RunwayIdentCount;
 import airporter.model.dao.dto.RunwaySurfaceCount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -27,10 +28,10 @@ public class RunwayDAOImpl implements RunwayDAO {
         namedQuery.setParameter("countryCodes", countryCodes);
 
         final List resultList = namedQuery.getResultList();
-        return convertResultSet(resultList);
+        return convertSurfaceResultSet(resultList);
     }
 
-    private List<RunwaySurfaceCount> convertResultSet(final List resultList) {
+    private List<RunwaySurfaceCount> convertSurfaceResultSet(final List resultList) {
         final List<RunwaySurfaceCount> countryAirportCounts = new ArrayList<>(resultList.size());
         for (final Object resultSet : resultList) {
             final Object[] result = (Object[]) resultSet;
@@ -41,4 +42,25 @@ public class RunwayDAOImpl implements RunwayDAO {
         }
         return countryAirportCounts;
     }
+
+    @Override
+    public List<RunwayIdentCount> findRunwayIdentCounts(final int limit) {
+        final Query namedQuery = entityManager.createNamedQuery(JPANamedQuery.SELECT_RUNWAY_COMMON_IDENT);
+        namedQuery.setParameter("limit", limit);
+
+        final List resultList = namedQuery.getResultList();
+        return convertIdentResultSet(resultList);
+    }
+
+    private List<RunwayIdentCount> convertIdentResultSet(final List resultList) {
+        final List<RunwayIdentCount> countryAirportCounts = new ArrayList<>(resultList.size());
+        for (final Object resultSet : resultList) {
+            final Object[] result = (Object[]) resultSet;
+            final String ident = (String) result[0];
+            final int count = (Integer) result[1];
+            countryAirportCounts.add(new RunwayIdentCount(ident, count));
+        }
+        return countryAirportCounts;
+    }
+
 }

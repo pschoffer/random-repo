@@ -15,13 +15,13 @@ Choosing Reports will print the following:
     Bonus: Print the top 10 most common runway identifications (indicated in "le_ident" column)
 
 
-TODO:
+Enhancements:
 
  * Query
  ** AJAX
 
  * Report
- ** Bonus
+ ** Caching
 
  * DB Script
  ** Indexes for performance

@@ -4,6 +4,7 @@ import airporter.model.dao.AirportDAO;
 import airporter.model.dao.CountryDAO;
 import airporter.model.dao.RunwayDAO;
 import airporter.model.dao.dto.CountryAirportCount;
+import airporter.model.dao.dto.RunwayIdentCount;
 import airporter.model.dao.dto.RunwaySurfaceCount;
 import airporter.model.entity.Airport;
 import airporter.model.entity.Country;
@@ -96,5 +97,10 @@ public class QueryServiceImpl implements QueryService {
     @Override
     public long getTotalCountCountries() {
         return countryDAO.getTotalCount();
+    }
+
+    @Override
+    public List<RunwayIdentCount> findCommonRunways(final int limit) {
+        return runwayDAO.findRunwayIdentCounts(limit);
     }
 }

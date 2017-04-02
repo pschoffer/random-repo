@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Super Airport App</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="/css/airporter.css"
+          th:href="@{css/airporter.css}" />
+</head>
+<body>
+    <div class="main">
+        <div th:replace="fragments/menu :: menu"></div>
+        <div class="content">
+            <div th:replace="fragments/error :: error"></div>
+            <h2>Runways</h2>
+            <p>This report shows most common names of runways and their count</p>
+            <table class="report-result">
+                <tr>
+                    <th>No.</th>
+                    <th>Identification</th>
+                    <th>Count</th>
+                </tr>
+                <tr th:each="ident, loopStat : ${idents}">
+                    <td th:text="${loopStat.count}" />
+                    <td th:text="${ident.ident}" />
+                    <td th:text="${ident.count}" />
+                </tr>
+            </table>
+
+        </div>
+    </div>
+    <div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

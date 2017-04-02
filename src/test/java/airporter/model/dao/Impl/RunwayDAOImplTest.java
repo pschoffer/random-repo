@@ -2,6 +2,7 @@ package airporter.model.dao.Impl;
 
 import airporter.model.JPANamedQuery;
 import airporter.model.dao.RunwayDAO;
+import airporter.model.dao.dto.RunwayIdentCount;
 import airporter.model.dao.dto.RunwaySurfaceCount;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -16,7 +17,6 @@ import java.util.Collections;
 import java.util.List;
 
 import static org.mockito.Mockito.when;
-import static org.testng.Assert.*;
 
 /**
  * Created by pavel on 2.4.17.
@@ -24,6 +24,7 @@ import static org.testng.Assert.*;
 public class RunwayDAOImplTest {
     private final static String COUNTRY_CODE = "CZ";
     private final static String SURFACE = "Grass";
+    private static final Object IDENT = "H1";
     private final static int COUNT = 1;
 
     @Mock
@@ -39,9 +40,10 @@ public class RunwayDAOImplTest {
         MockitoAnnotations.initMocks(this);
 
         when(entityManager.createNamedQuery(JPANamedQuery.SELECT_RUNWAY_SURFACE_COUNT_PER_COUNTRY)).thenReturn(query);
+        when(entityManager.createNamedQuery(JPANamedQuery.SELECT_RUNWAY_COMMON_IDENT)).thenReturn(query);
     }
     @Test
-    public void whenFoundCount_returnInDTO() throws Exception {
+    public void whenFoundSurfaceCount_returnInDTO() throws Exception {
         // prepare
         final Object[] resultSet = {COUNTRY_CODE, SURFACE, COUNT};
         final List dbResult = Collections.singletonList(resultSet);
@@ -57,6 +59,24 @@ public class RunwayDAOImplTest {
         Assert.assertEquals(runwaySurfaceCount.getCount(), COUNT);
         Assert.assertEquals(runwaySurfaceCount.getCountryCode(), COUNTRY_CODE);
         Assert.assertEquals(runwaySurfaceCount.getSurface(), SURFACE);
+    }
+
+    @Test
+    public void whenFoundIdentCount_returnInDTO() throws Exception {
+        // prepare
+        final Object[] resultSet = {IDENT, COUNT};
+        final List dbResult = Collections.singletonList(resultSet);
+        when(query.getResultList()).thenReturn(dbResult);
+
+        // execute
+        final List<RunwayIdentCount> runwayIdentCounts = dao.findRunwayIdentCounts(0);
+
+        // assertA
+
+        Assert.assertEquals(runwayIdentCounts.size(), dbResult.size());
+        final RunwayIdentCount runwayIdentCount = runwayIdentCounts.get(0);
+        Assert.assertEquals(runwayIdentCount.getCount(), COUNT);
+        Assert.assertEquals(runwayIdentCount.getIdent(), IDENT);
     }
 
 }

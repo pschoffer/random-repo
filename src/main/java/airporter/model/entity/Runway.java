@@ -1,8 +1,6 @@
 package airporter.model.entity;
 
 import airporter.model.JPANamedQuery;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 
@@ -18,7 +16,13 @@ import javax.persistence.*;
                     @ColumnResult(name = "code", type = String.class),
                     @ColumnResult(name = "surface", type = String.class),
                     @ColumnResult(name = "counter", type = Integer.class)
-
+                }
+        ),
+        @SqlResultSetMapping(
+                name = "IdentCount",
+                columns = {
+                        @ColumnResult(name = "ident", type = String.class),
+                        @ColumnResult(name = "counter", type = Integer.class)
                 }
         )
 })
@@ -33,6 +37,15 @@ import javax.persistence.*;
                         "group by countries.code, runways.surface " +
                         "order by count(runways.id) DESC, runways.surface",
                 resultSetMapping = "SurfaceCount"
+        ),
+        @NamedNativeQuery(
+                name = JPANamedQuery.SELECT_RUNWAY_COMMON_IDENT,
+                query = "select runways.le_ident as ident, count(runways.id) as counter " +
+                        "from runways " +
+                        "group by runways.le_ident " +
+                        "order by count(runways.id) DESC, runways.le_ident " +
+                        "limit :limit",
+                resultSetMapping = "IdentCount"
         )
 })
 public class Runway {

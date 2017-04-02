@@ -1,5 +1,6 @@
 package airporter.model.dao;
 
+import airporter.model.dao.dto.RunwayIdentCount;
 import airporter.model.dao.dto.RunwaySurfaceCount;
 
 import java.util.List;
@@ -9,4 +10,6 @@ import java.util.List;
  */
 public interface RunwayDAO {
     List<RunwaySurfaceCount> findRunwaySurfaceCounts(final List<String> countryCodes);
+
+    List<RunwayIdentCount> findRunwayIdentCounts(final int limit);
 }

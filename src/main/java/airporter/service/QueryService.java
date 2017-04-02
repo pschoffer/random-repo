@@ -1,5 +1,6 @@
 package airporter.service;
 
+import airporter.model.dao.dto.RunwayIdentCount;
 import airporter.model.entity.Airport;
 import airporter.model.entity.Country;
 import airporter.service.dto.CountryRunway;
@@ -20,4 +21,6 @@ public interface QueryService {
     List<CountryRunway> findCountriesLowestAirportCount(final int number);
 
     long getTotalCountCountries();
+
+    List<RunwayIdentCount> findCommonRunways(final int limit);
 }
