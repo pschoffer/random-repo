@@ -75,10 +75,24 @@ ul.error {
     border-color: #9C1010;
 }
 
-table.query-result{
+table.query-result {
     padding-bottom: 10px;
 }
 
 table.query-result td {
     vertical-align: top;
+}
+
+table.report-result {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px 0px;
+}
+table.report-result th {
+    color: black;
+    background-color: #4CAF50;
+    height: 20px;
+}
+table.report-result th, td {
+    border: 1px solid black;
 }

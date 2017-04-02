@@ -12,7 +12,7 @@ import java.util.List;
 @Table(name = "airports")
 @NamedQueries({
         @NamedQuery(
-                name = JPANamedQuery.SELECT_AIRPORT_BY_COUNTRY_CODE,
+                name = JPANamedQuery.SELECT_AIRPORTS_BY_COUNTRY_CODE,
                 query = "from Airport where iso_country = :code"
         )
 })
@@ -29,6 +29,9 @@ public class Airport {
 
     @Column(name = "type")
     private String type;
+
+    @Column(name = "iso_country")
+    private String country;
 
     @OneToMany(mappedBy = "airport", fetch = FetchType.EAGER)
     private List<Runway> runways;

@@ -23,7 +23,7 @@ public class AirportDAOImpl implements AirportDAO{
     @Override
     public List<Airport> findByCountryCode(final String code) {
         final TypedQuery<Airport> namedQuery = entityManager.createNamedQuery(
-                JPANamedQuery.SELECT_AIRPORT_BY_COUNTRY_CODE, Airport.class);
+                JPANamedQuery.SELECT_AIRPORTS_BY_COUNTRY_CODE, Airport.class);
         namedQuery.setParameter("code", code);
 
         return namedQuery.getResultList();

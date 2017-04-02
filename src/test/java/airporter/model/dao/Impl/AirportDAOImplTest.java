@@ -17,7 +17,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.mockito.Mockito.when;
-import static org.testng.Assert.*;
 
 /**
  * Created by pavel on 1.4.17.
@@ -37,7 +36,7 @@ public class AirportDAOImplTest {
     @BeforeMethod
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
-        when(entityManager.createNamedQuery(JPANamedQuery.SELECT_AIRPORT_BY_COUNTRY_CODE, Airport.class))
+        when(entityManager.createNamedQuery(JPANamedQuery.SELECT_AIRPORTS_BY_COUNTRY_CODE, Airport.class))
                 .thenReturn(query);
     }
 

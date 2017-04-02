@@ -13,8 +13,18 @@
             <div th:replace="fragments/error :: error"></div>
             <h2>Report</h2>
             <p>This report shows countries with the most and least amount of airports</p>
-            <div class="report-result" th:if="${country_info}" th:object="${country_info}">
-            </div>
+            <table class="report-result">
+                <tr>
+                    <th>No.</th>
+                    <th>Country</th>
+                    <th>Airport Count</th>
+                </tr>
+                <tr th:each="country, loopStat : ${top}">
+                    <td th:text="${loopStat.count}" />
+                    <td th:text="${country.country.name}" />
+                    <td th:text="${country.airportCount}" />
+                </tr>
+            </table>
 
         </div>
     </div>

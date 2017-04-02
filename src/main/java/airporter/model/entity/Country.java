@@ -15,6 +15,30 @@ import javax.persistence.*;
                 query = "from Country where lower(code) = lower(:code) or lower(name) = lower(:name)"
         )
 })
+@SqlResultSetMapping(
+        name = "CountriesWithCount",
+        entities = @EntityResult(
+                entityClass = Country.class
+        ),
+        columns = @ColumnResult(
+                name = "counter",
+                type = Integer.class
+        )
+)
+@NamedNativeQueries({
+        @NamedNativeQuery(
+                name = JPANamedQuery.SELECT_COUNTRIES_BY_AIRPORT_COUNT,
+                query = "select country.*, airports.counter " +
+                        "from countries as country, " +
+                        "     ( select iso_country as country, count(airports.id) counter " +
+                        "       from airports " +
+                        "       group by iso_country) as airports " +
+                        "where country.code = airports.country " +
+                        "order by airports.counter DESC, country.name",
+                resultSetMapping = "CountriesWithCount"
+        )
+
+})
 public class Country {
     @Id
     @Column(name = "id")

@@ -2,14 +2,16 @@ package airporter.model.dao.Impl;
 
 import airporter.model.JPANamedQuery;
 import airporter.model.dao.CountryDAO;
+import airporter.model.dao.dto.CountryAirportCount;
 import airporter.model.entity.Country;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
-import javax.persistence.criteria.CriteriaBuilder;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -34,6 +36,22 @@ public class CountryDAOImpl implements CountryDAO {
             return null;
         }
         return countries.get(0);
+    }
+
+    @Override
+    public List<CountryAirportCount> findByAirportCount(final int number) {
+        final Query namedQuery = entityManager.createNamedQuery(JPANamedQuery.SELECT_COUNTRIES_BY_AIRPORT_COUNT);
+        namedQuery.setMaxResults(number);
+
+        final List resultList = namedQuery.getResultList();
+        final List<CountryAirportCount> countryAirportCounts = new ArrayList<>(resultList.size());
+        for (final Object resultSet : resultList) {
+            Object[] result = (Object[]) resultSet;
+            final Country country = (Country) result[0];
+            final int count = (Integer) result[1];
+            countryAirportCounts.add(new CountryAirportCount(count,country));
+        }
+        return countryAirportCounts;
     }
 
 }

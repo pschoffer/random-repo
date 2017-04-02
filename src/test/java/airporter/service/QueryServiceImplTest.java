@@ -2,9 +2,11 @@ package airporter.service;
 
 import airporter.model.dao.AirportDAO;
 import airporter.model.dao.CountryDAO;
+import airporter.model.dao.dto.CountryAirportCount;
 import airporter.model.entity.Airport;
 import airporter.model.entity.Country;
 import airporter.service.dto.CountryAirports;
+import airporter.service.dto.CountryRunway;
 import airporter.service.exception.CountryNotFoundException;
 import airporter.service.impl.QueryServiceImpl;
 import org.mockito.InjectMocks;
@@ -15,6 +17,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.mockito.ArgumentMatchers.anyString;
@@ -26,6 +29,7 @@ import static org.mockito.Mockito.when;
 public class QueryServiceImplTest {
     private static final String EXISTING_COUNTRY = "CZ";
     private static final String NON_EXITING_COUNTRY = "BLA";
+    private static final int LIMIT = 5;
     @Mock
     private CountryDAO countryDAO;
     @Mock
@@ -62,5 +66,25 @@ public class QueryServiceImplTest {
     public void whenNonExistingCountry_thenThrowException() throws Exception {
         // execute
         service.getCountryAirports(NON_EXITING_COUNTRY);
+    }
+
+    @Test
+    public void whenLookingForCount_thenTransformResultCorrectly() throws Exception {
+        // prepare
+        final int expectedCount = 2;
+        final Country expectedCountry = new Country();
+        final CountryAirportCount countryCount = new CountryAirportCount(expectedCount, expectedCountry);
+        final List<CountryAirportCount> countryCounts = Collections.singletonList(countryCount);
+        when(countryDAO.findByAirportCount(LIMIT)).thenReturn(countryCounts);
+
+        // execute
+        final List<CountryRunway> countriesWithTheMostAirports = service.findCountriesWithTheMostAirports(LIMIT);
+
+        // assert
+        Assert.assertEquals(countriesWithTheMostAirports.size(), countryCounts.size());
+        final CountryRunway countryRunway = countriesWithTheMostAirports.get(0);
+        Assert.assertEquals(countryRunway.getAirportCount(), expectedCount);
+        Assert.assertEquals(countryRunway.getCountry(), expectedCountry);
+        //TODO count runways
     }
 }

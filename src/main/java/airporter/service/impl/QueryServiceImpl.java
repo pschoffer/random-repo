@@ -2,10 +2,13 @@ package airporter.service.impl;
 
 import airporter.model.dao.AirportDAO;
 import airporter.model.dao.CountryDAO;
+import airporter.model.dao.dto.CountryAirportCount;
 import airporter.model.entity.Airport;
 import airporter.model.entity.Country;
+import airporter.model.entity.Runway;
 import airporter.service.QueryService;
 import airporter.service.dto.CountryAirports;
+import airporter.service.dto.CountryRunway;
 import airporter.service.exception.CountryNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -33,5 +36,20 @@ public class QueryServiceImpl implements QueryService {
 
         final List<Airport> airports = airportDAO.findByCountryCode(country.getCode());
         return new CountryAirports(country, airports);
+    }
+
+    @Override
+    public List<CountryRunway> findCountriesWithTheMostAirports(final int number) {
+        final List<CountryAirportCount> countryCounts = countryDAO.findByAirportCount(number);
+        final List<CountryRunway> countryRunways = new ArrayList<>();
+
+        for (final CountryAirportCount countryCount : countryCounts) {
+            final List<Runway> runways = new ArrayList<>();
+            final CountryRunway countryRunway = new CountryRunway(countryCount.getCountry(), runways,
+                    countryCount.getCount());
+            countryRunways.add(countryRunway);
+        }
+
+        return countryRunways;
     }
 }
