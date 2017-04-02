@@ -9,7 +9,9 @@ import java.util.List;
  * Created by pavel on 1.4.17.
  */
 public interface CountryDAO {
-    Country getByCodeOrName(final String identification);
+    Country getByName(final String ident);
+
+    Country getByCode(final String ident);
 
     List<CountryAirportCount> findByHighestAirportCount(int number);
 

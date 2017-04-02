@@ -1,6 +1,8 @@
 package airporter.model.entity;
 
 import airporter.model.JPANamedQuery;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.List;
@@ -34,6 +36,7 @@ public class Airport {
     private String country;
 
     @OneToMany(mappedBy = "airport", fetch = FetchType.EAGER)
+    @Fetch(FetchMode.SUBSELECT)
     private List<Runway> runways;
 
     public int getId() {

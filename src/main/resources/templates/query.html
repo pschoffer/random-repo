@@ -22,19 +22,19 @@
                     </tr>
                 </table>
             </form>
-            <div class="query-result" th:if="${country_info}" th:object="${country_info}">
+            <div class="query-result" th:if="${country}">
                 <h3>Result</h3>
                 <table class="query-result">
                     <tr>
-                        <td>Country: </td> <td th:text="*{country.name}" />
+                        <td>Country: </td> <td th:text="${country.name}" />
                     </tr>
                     <tr>
-                        <td>Code: </td> <td th:text="*{country.code}" />
+                        <td>Code: </td> <td th:text="${country.code}" />
                     </tr>
-                    <tr th:if="*{not #lists.isEmpty(airports)}">
-                        <td th:rowspan="*{#lists.size(airports) + 1}">Airports (Runways): </td>
+                    <tr th:if="${not #lists.isEmpty(airports)}">
+                        <td th:rowspan="${#lists.size(airports) + 1}">Airports (Runways): </td>
                     </tr>
-                    <tr th:each="airport, airStat : *{airports}">
+                    <tr th:each="airport, airStat : ${airports}">
                         <td>
                             <span th:text="${airStat.count} + ' [' + ${airport.ident} + '] ' + ${airport.name}"/>
                             <span th:if="${not #lists.isEmpty(airport.runways)}">

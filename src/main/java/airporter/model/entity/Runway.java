@@ -1,6 +1,8 @@
 package airporter.model.entity;
 
 import airporter.model.JPANamedQuery;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 
@@ -47,7 +49,7 @@ public class Runway {
     @Column(name = "width_ft")
     private int width;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "airport_ref")
     private Airport airport;
 

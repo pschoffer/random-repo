@@ -8,13 +8,11 @@ import airporter.model.dao.dto.RunwaySurfaceCount;
 import airporter.model.entity.Airport;
 import airporter.model.entity.Country;
 import airporter.service.QueryService;
-import airporter.service.dto.CountryAirports;
 import airporter.service.dto.CountryRunway;
 import airporter.service.exception.CountryNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.ManyToOne;
 import java.util.*;
 
 /**
@@ -22,6 +20,7 @@ import java.util.*;
  */
 @Component
 public class QueryServiceImpl implements QueryService {
+    private static final int MAX_COUNTRY_CODE_LENGTH = 2;
     @Autowired
     private CountryDAO countryDAO;
     @Autowired
@@ -30,15 +29,24 @@ public class QueryServiceImpl implements QueryService {
     private RunwayDAO runwayDAO;
 
     @Override
-    public CountryAirports getCountryAirports(final String countryIdentification) throws CountryNotFoundException {
-        final Country country = countryDAO.getByCodeOrName(countryIdentification);
-        if (country == null) {
-            final String msg = String.format("Country was not found (using \"%s\").", countryIdentification);
-            throw new CountryNotFoundException(msg);
+    public Country getCountry(final String ident) throws CountryNotFoundException {
+        final Country country;
+        if (ident.length() <= MAX_COUNTRY_CODE_LENGTH) {
+            country = countryDAO.getByCode(ident);
+        } else {
+            country = countryDAO.getByName(ident);
         }
 
-        final List<Airport> airports = airportDAO.findByCountryCode(country.getCode());
-        return new CountryAirports(country, airports);
+        if (country == null) {
+            final String msg = String.format("Country was not found (using \"%s\").", ident);
+            throw new CountryNotFoundException(msg);
+        }
+        return country;
+    }
+
+    @Override
+    public List<Airport> getCountryAirports(final String countryCode) throws CountryNotFoundException {
+        return airportDAO.findByCountryCode(countryCode);
     }
 
     @Override

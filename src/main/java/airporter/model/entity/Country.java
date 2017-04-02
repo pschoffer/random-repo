@@ -11,8 +11,12 @@ import javax.persistence.*;
 @Table(name = "countries")
 @NamedQueries({
         @NamedQuery(
-                name = JPANamedQuery.SELECT_COUNTRY_BY_CODE_OR_NAME,
-                query = "from Country where lower(code) = lower(:code) or lower(name) = lower(:name)"
+                name = JPANamedQuery.SELECT_COUNTRY_BY_NAME,
+                query = "from Country where lower(name) = lower(:name)"
+        ),
+        @NamedQuery(
+                name = JPANamedQuery.SELECT_COUNTRY_BY_CODE,
+                query = "from Country where lower(code) = lower(:code)"
         )
 })
 @SqlResultSetMapping(

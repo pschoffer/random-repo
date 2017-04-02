@@ -1,6 +1,7 @@
 package airporter.controller;
 
 import airporter.form.QueryForm;
+import airporter.model.entity.Airport;
 import airporter.model.entity.Country;
 import airporter.service.QueryService;
 import airporter.service.dto.CountryAirports;
@@ -18,6 +19,7 @@ import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
@@ -29,7 +31,8 @@ public class QueryControllerTest {
 
     public static final String FORM = "form";
     private static final String ERROR_KEY = "error";
-    private static final String COUNTRY_KEY = "country_info";
+    private static final String AIRPORTS_KEY = "airports";
+    private static final String COUNTRY_KEY = "country";
     private static final String COUNTRY = "CZ";
     private static final String OBJECT_NAME = "form";
 
@@ -63,6 +66,7 @@ public class QueryControllerTest {
     public void wQuerySubmit_thenPassTheForm() throws Exception {
         // prepare
         inputForm.setCountry(COUNTRY);
+        when(queryService.getCountry(COUNTRY)).thenReturn(new Country());
 
         // execute
         controller.querySubmit(model, inputForm, bindResult);
@@ -79,7 +83,7 @@ public class QueryControllerTest {
         inputForm.setCountry(COUNTRY);
         final String expectedError = "Not Found";
         final CountryNotFoundException exception = new CountryNotFoundException(expectedError);
-        when(queryService.getCountryAirports(COUNTRY)).thenThrow(exception);
+        when(queryService.getCountry(COUNTRY)).thenThrow(exception);
 
         // execute
         controller.querySubmit(model, inputForm, bindResult);
@@ -106,21 +110,23 @@ public class QueryControllerTest {
     }
 
     @Test
-    public void whenCountryFound_thenPassToModel() throws Exception {
+    public void whenDataFound_thenPassToModel() throws Exception {
         // prepare
         inputForm.setCountry(COUNTRY);
         final Country expectedCountry = new Country();
-        final CountryAirports expectedCountryAirports = new CountryAirports(expectedCountry, new ArrayList<>());
         expectedCountry.setCode(COUNTRY);
-        when(queryService.getCountryAirports(anyString())).thenReturn(expectedCountryAirports);
+        when(queryService.getCountry(anyString())).thenReturn(expectedCountry);
+        when(queryService.getCountryAirports(anyString())).thenReturn(new ArrayList<>());
 
         // execute
         controller.querySubmit(model, inputForm, bindResult);
 
         // assert
-        final CountryAirports countryAirports = (CountryAirports) model.asMap().get(COUNTRY_KEY);
+        final Country country = (Country) model.asMap().get(COUNTRY_KEY);
         final String errorMsg = (String) model.asMap().get(ERROR_KEY);
+        final Object airports = model.asMap().get(AIRPORTS_KEY);
         Assert.assertNull(errorMsg);
-        Assert.assertEquals(countryAirports.getCountry(), expectedCountry);
+        Assert.assertEquals(country, expectedCountry);
+        Assert.assertNotNull(airports);
     }
 }

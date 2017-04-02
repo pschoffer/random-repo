@@ -43,7 +43,9 @@ public class CountryDAOImplTest {
     @BeforeMethod
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
-        when(entityManager.createNamedQuery(JPANamedQuery.SELECT_COUNTRY_BY_CODE_OR_NAME, Country.class))
+        when(entityManager.createNamedQuery(JPANamedQuery.SELECT_COUNTRY_BY_NAME, Country.class))
+                .thenReturn(typedQuery);
+        when(entityManager.createNamedQuery(JPANamedQuery.SELECT_COUNTRY_BY_CODE, Country.class))
                 .thenReturn(typedQuery);
         when(entityManager.createNamedQuery(JPANamedQuery.SELECT_COUNTRIES_BY_AIRPORT_COUNT)).thenReturn(query);
 
@@ -51,29 +53,52 @@ public class CountryDAOImplTest {
     }
 
     @Test
-    public void whenExistingCountry_thenReturnIt() throws Exception {
+    public void whenExistingName_thenReturnIt() throws Exception {
         // prepare
         when(typedQuery.getResultList()).thenReturn(Arrays.asList(country));
 
         // execute
-        final Country country = dao.getByCodeOrName(EXISTING_COUNTRY);
+        final Country country = dao.getByName(EXISTING_COUNTRY);
 
         // assert
         Assert.assertNotNull(country);
     }
 
     @Test
-    public void whenNonExistingCountry_thenReturnNull() throws Exception {
+    public void whenNonExistingName_thenReturnNull() throws Exception {
         // prepare
         when(typedQuery.getResultList()).thenReturn(Arrays.asList());
 
         // execute
-        final Country country = dao.getByCodeOrName(NON_EXISTING_COUNTRY);
+        final Country country = dao.getByName(NON_EXISTING_COUNTRY);
 
         // assert
         Assert.assertNull(country);
     }
 
+    @Test
+    public void whenExistingCode_thenReturnIt() throws Exception {
+        // prepare
+        when(typedQuery.getResultList()).thenReturn(Arrays.asList(country));
+
+        // execute
+        final Country country = dao.getByCode(EXISTING_COUNTRY);
+
+        // assert
+        Assert.assertNotNull(country);
+    }
+
+    @Test
+    public void whenNonExistingCode_thenReturnNull() throws Exception {
+        // prepare
+        when(typedQuery.getResultList()).thenReturn(Arrays.asList());
+
+        // execute
+        final Country country = dao.getByCode(NON_EXISTING_COUNTRY);
+
+        // assert
+        Assert.assertNull(country);
+    }
     @Test
     public void whenFoundCount_returnInDTO() throws Exception {
         // prepare

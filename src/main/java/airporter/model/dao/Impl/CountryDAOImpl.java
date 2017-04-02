@@ -28,17 +28,30 @@ public class CountryDAOImpl implements CountryDAO {
     private EntityManager entityManager;
 
     @Override
-    public Country getByCodeOrName(final String identification) {
+    public Country getByName(final String ident) {
         final TypedQuery<Country> namedQuery = entityManager.createNamedQuery(
-                JPANamedQuery.SELECT_COUNTRY_BY_CODE_OR_NAME, Country.class);
-        namedQuery.setParameter("code", identification);
-        namedQuery.setParameter("name", identification);
+                JPANamedQuery.SELECT_COUNTRY_BY_NAME, Country.class);
+        namedQuery.setParameter("name", ident);
 
         final List<Country> countries = namedQuery.getResultList();
         if (countries.size() != 1) {
             return null;
         }
         return countries.get(0);
+    }
+
+
+    @Override
+    public Country getByCode(final String ident) {
+        final TypedQuery<Country> namedQuery = entityManager.createNamedQuery(
+                JPANamedQuery.SELECT_COUNTRY_BY_CODE, Country.class);
+        namedQuery.setParameter("code", ident);
+
+        final List<Country> countries = namedQuery.getResultList();
+        if (countries.size() == 1) {
+            return countries.get(0);
+        }
+        return null;
     }
 
     @Override

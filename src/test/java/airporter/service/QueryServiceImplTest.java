@@ -7,7 +7,6 @@ import airporter.model.dao.dto.CountryAirportCount;
 import airporter.model.dao.dto.RunwaySurfaceCount;
 import airporter.model.entity.Airport;
 import airporter.model.entity.Country;
-import airporter.service.dto.CountryAirports;
 import airporter.service.dto.CountryRunway;
 import airporter.service.exception.CountryNotFoundException;
 import airporter.service.impl.QueryServiceImpl;
@@ -23,14 +22,16 @@ import java.util.Collections;
 import java.util.List;
 
 import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /**
  * Created by pavel on 1.4.17.
  */
 public class QueryServiceImplTest {
-    private static final String EXISTING_COUNTRY = "CZ";
-    private static final String NON_EXITING_COUNTRY = "BLA";
+    private static final String EXISTING_COUNTRY_CODE = "CZ";
+    private static final String EXISTING_COUNTRY_NAME = "Czech Republic";
     private static final String ONE_RUNWAY_COUNTRY = "CZ";
     private static final String TWO_RUNWAY_COUNTRY = "US";
     private static final int LIMIT = 5;
@@ -49,29 +50,41 @@ public class QueryServiceImplTest {
 
     }
 
+    @Test(expectedExceptions = CountryNotFoundException.class,
+            expectedExceptionsMessageRegExp = ".*not found.*" + EXISTING_COUNTRY_CODE + ".*")
+    public void whenShortIdent_thenJustTryCode() throws Exception {
+        // prepare
+        when(countryDAO.getByName(anyString())).thenReturn(new Country());
+
+        // execute
+        service.getCountry(EXISTING_COUNTRY_CODE);
+    }
+
+    @Test
+    public void whenLongIdent_thenJustTryName() throws Exception {
+        // prepare
+        final Country expectedCountry = new Country();
+        when(countryDAO.getByName(anyString())).thenReturn(expectedCountry);
+
+        // execute
+        final Country resultCountry = service.getCountry(EXISTING_COUNTRY_NAME);
+
+        // assert
+        Assert.assertEquals(resultCountry, expectedCountry);
+        verify(countryDAO, never()).getByCode(EXISTING_COUNTRY_NAME);
+    }
+
     @Test
     public void whenExistingCountry_thenReturnInformation() throws Exception {
         // prepare
-        final List<Airport> airports = Arrays.asList(new Airport());
-        final Country expectedCountry = new Country();
-        expectedCountry.setCode(EXISTING_COUNTRY);
-        when(countryDAO.getByCodeOrName(anyString())).thenReturn(expectedCountry);
-        when(airportDAO.findByCountryCode(anyString())).thenReturn(airports);
+        final List<Airport> expectedAirports = Arrays.asList(new Airport());
+        when(airportDAO.findByCountryCode(anyString())).thenReturn(expectedAirports);
 
         // execute
-        final CountryAirports countryAirports = service.getCountryAirports(EXISTING_COUNTRY);
+        final List<Airport> airports = service.getCountryAirports(EXISTING_COUNTRY_CODE);
 
         // assert
-        final Country country = countryAirports.getCountry();
-        Assert.assertNotNull(country);
-        Assert.assertEquals(countryAirports.getAirports(), airports);
-    }
-
-    @Test(expectedExceptions = CountryNotFoundException.class,
-            expectedExceptionsMessageRegExp = ".*not found.*" + NON_EXITING_COUNTRY + ".*")
-    public void whenNonExistingCountry_thenThrowException() throws Exception {
-        // execute
-        service.getCountryAirports(NON_EXITING_COUNTRY);
+        Assert.assertEquals(airports, expectedAirports);
     }
 
     @Test
