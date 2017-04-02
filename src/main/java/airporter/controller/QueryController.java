@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.StringJoiner;
 
 /**
@@ -26,6 +28,7 @@ public class QueryController {
     private final static String FORM_KEY = "form";
     private final static String COUNTRY_KEY = "country";
     private final static String AIRPORTS_KEY = "airports";
+    private static final String MULTIPLE_OPTIONS_KEY = "options";
 
     @Autowired
     private QueryService queryService;
@@ -45,16 +48,28 @@ public class QueryController {
             model.addAttribute(ERROR_KEY, errorMsg);
         } else {
             try {
-                final Country country = queryService.getCountry(form.getCountry());
-                final List<Airport> airports = queryService.getCountryAirports(country.getCode());
-                model.addAttribute(COUNTRY_KEY, country);
-                model.addAttribute(AIRPORTS_KEY, airports);
+                final Map<String, Object> attributes = getModelAttributes(form.getCountry());
+                model.addAllAttributes(attributes);
             } catch (final CountryNotFoundException e) {
                 model.addAttribute(ERROR_KEY, e.getMessage());
             }
         }
 
         return "query";
+    }
+
+    private Map<String, Object> getModelAttributes(final String countryIdent) throws CountryNotFoundException {
+        final List<Country> countries = queryService.findCountries(countryIdent);
+        final Map<String, Object> attributes = new HashMap<>();
+        if (countries.size() > 1) {
+            attributes.put(MULTIPLE_OPTIONS_KEY, countries);
+        } else {
+            final Country country = countries.get(0);
+            final List<Airport> airports = queryService.getCountryAirports(country.getCode());
+            attributes.put(COUNTRY_KEY, country);
+            attributes.put(AIRPORTS_KEY, airports);
+        }
+        return attributes;
     }
 
     private String getErrorMsg(final BindingResult bindingResult) {

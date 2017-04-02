@@ -9,7 +9,7 @@ import java.util.List;
  * Created by pavel on 1.4.17.
  */
 public interface CountryDAO {
-    Country getByName(final String ident);
+    List<Country> findByName(final String ident);
 
     Country getByCode(final String ident);
 

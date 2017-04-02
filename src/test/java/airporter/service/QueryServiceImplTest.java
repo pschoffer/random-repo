@@ -54,23 +54,23 @@ public class QueryServiceImplTest {
             expectedExceptionsMessageRegExp = ".*not found.*" + EXISTING_COUNTRY_CODE + ".*")
     public void whenShortIdent_thenJustTryCode() throws Exception {
         // prepare
-        when(countryDAO.getByName(anyString())).thenReturn(new Country());
+        when(countryDAO.findByName(anyString())).thenReturn(Arrays.asList(new Country()));
 
         // execute
-        service.getCountry(EXISTING_COUNTRY_CODE);
+        service.findCountries(EXISTING_COUNTRY_CODE);
     }
 
     @Test
     public void whenLongIdent_thenJustTryName() throws Exception {
         // prepare
         final Country expectedCountry = new Country();
-        when(countryDAO.getByName(anyString())).thenReturn(expectedCountry);
+        when(countryDAO.findByName(anyString())).thenReturn(Arrays.asList(expectedCountry));
 
         // execute
-        final Country resultCountry = service.getCountry(EXISTING_COUNTRY_NAME);
+        final List<Country> resultCountries = service.findCountries(EXISTING_COUNTRY_NAME);
 
         // assert
-        Assert.assertEquals(resultCountry, expectedCountry);
+        Assert.assertEquals(resultCountries.get(0), expectedCountry);
         verify(countryDAO, never()).getByCode(EXISTING_COUNTRY_NAME);
     }
 

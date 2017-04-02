@@ -29,19 +29,23 @@ public class QueryServiceImpl implements QueryService {
     private RunwayDAO runwayDAO;
 
     @Override
-    public Country getCountry(final String ident) throws CountryNotFoundException {
-        final Country country;
+    public List<Country> findCountries(final String ident) throws CountryNotFoundException {
+        final List<Country> countries;
         if (ident.length() <= MAX_COUNTRY_CODE_LENGTH) {
-            country = countryDAO.getByCode(ident);
+            final Country country = countryDAO.getByCode(ident);
+            countries = new ArrayList<>();
+            if (country != null) {
+                countries.add(country);
+            }
         } else {
-            country = countryDAO.getByName(ident);
+            countries = countryDAO.findByName(ident);
         }
 
-        if (country == null) {
+        if (countries.isEmpty()) {
             final String msg = String.format("Country was not found (using \"%s\").", ident);
             throw new CountryNotFoundException(msg);
         }
-        return country;
+        return countries;
     }
 
     @Override

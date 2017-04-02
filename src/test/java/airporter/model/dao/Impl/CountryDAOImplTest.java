@@ -58,10 +58,10 @@ public class CountryDAOImplTest {
         when(typedQuery.getResultList()).thenReturn(Arrays.asList(country));
 
         // execute
-        final Country country = dao.getByName(EXISTING_COUNTRY);
+        final List<Country> countries = dao.findByName(EXISTING_COUNTRY);
 
         // assert
-        Assert.assertNotNull(country);
+        Assert.assertFalse(countries.isEmpty());
     }
 
     @Test
@@ -70,10 +70,10 @@ public class CountryDAOImplTest {
         when(typedQuery.getResultList()).thenReturn(Arrays.asList());
 
         // execute
-        final Country country = dao.getByName(NON_EXISTING_COUNTRY);
+        final List<Country> countries = dao.findByName(NON_EXISTING_COUNTRY);
 
         // assert
-        Assert.assertNull(country);
+        Assert.assertTrue(countries.isEmpty());
     }
 
     @Test

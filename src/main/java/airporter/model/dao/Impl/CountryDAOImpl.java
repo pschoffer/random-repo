@@ -28,16 +28,12 @@ public class CountryDAOImpl implements CountryDAO {
     private EntityManager entityManager;
 
     @Override
-    public Country getByName(final String ident) {
+    public List<Country> findByName(final String ident) {
         final TypedQuery<Country> namedQuery = entityManager.createNamedQuery(
                 JPANamedQuery.SELECT_COUNTRY_BY_NAME, Country.class);
         namedQuery.setParameter("name", ident);
 
-        final List<Country> countries = namedQuery.getResultList();
-        if (countries.size() != 1) {
-            return null;
-        }
-        return countries.get(0);
+        return namedQuery.getResultList();
     }
 
 

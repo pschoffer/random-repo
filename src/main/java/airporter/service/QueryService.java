@@ -11,7 +11,7 @@ import java.util.List;
  * Created by pavel on 1.4.17.
  */
 public interface QueryService {
-    Country getCountry(final String ident) throws CountryNotFoundException;
+    List<Country> findCountries(final String ident) throws CountryNotFoundException;
 
     List<Airport> getCountryAirports(final String countryCode) throws CountryNotFoundException;
 
