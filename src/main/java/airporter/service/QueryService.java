@@ -15,4 +15,6 @@ public interface QueryService {
     List<CountryRunway> findCountriesHighestAirportCount(final int number);
 
     List<CountryRunway> findCountriesLowestAirportCount(final int number);
+
+    long getTotalCountCountries();
 }

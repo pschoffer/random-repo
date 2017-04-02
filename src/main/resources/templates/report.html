@@ -30,7 +30,7 @@
                     <td>...</td>
                 </tr>
                 <tr th:each="country, loopStat : ${bottom}">
-                    <td th:text="${loopStat.count}" />
+                    <td th:text="${total} - ${loopStat.size} + ${loopStat.count}" />
                     <td th:text="${country.country.name}" />
                     <td th:text="${country.airportCount}" />
                 </tr>

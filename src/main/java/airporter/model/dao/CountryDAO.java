@@ -14,4 +14,6 @@ public interface CountryDAO {
     List<CountryAirportCount> findByHighestAirportCount(int number);
 
     List<CountryAirportCount> findByLowestAirportCount(int number);
+
+    long getTotalCount();
 }

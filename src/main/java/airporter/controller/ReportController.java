@@ -18,6 +18,8 @@ public class ReportController {
     private static final int NUMBER_OF_COUNTRIES = 10;
     private static final String TOP = "top";
     private static final String BOTTOM = "bottom";
+    private static final String TOTAL = "total";
+
     @Autowired
     private QueryService queryService;
 
@@ -29,6 +31,7 @@ public class ReportController {
         final List<CountryRunway> countriesWithTheLeastAirports =
                 queryService.findCountriesLowestAirportCount(NUMBER_OF_COUNTRIES);
         model.addAttribute(BOTTOM, countriesWithTheLeastAirports);
+        model.addAttribute(TOTAL, queryService.getTotalCountCountries());
         return "report";
     }
 }

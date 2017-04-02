@@ -11,6 +11,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -69,6 +71,14 @@ public class CountryDAOImpl implements CountryDAO {
         return countryAirportCounts;
     }
 
+    @Override
+    public long getTotalCount() {
+        final CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        final CriteriaQuery<Long> query = cb.createQuery(Long.class);
+        query.select(cb.count(query.from(Country.class)));
+        final long count = entityManager.createQuery(query).getSingleResult();
+        return count;
+    }
 
 }
 

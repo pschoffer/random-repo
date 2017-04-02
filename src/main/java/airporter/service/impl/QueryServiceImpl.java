@@ -64,4 +64,9 @@ public class QueryServiceImpl implements QueryService {
 
         return countryRunways;
     }
+
+    @Override
+    public long getTotalCountCountries() {
+        return countryDAO.getTotalCount();
+    }
 }
