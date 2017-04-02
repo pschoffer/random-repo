@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Super Airport App</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="/css/airporter.css"
+          th:href="@{css/airporter.css}" />
+</head>
+<body>
+    <div class="main">
+        <div th:replace="fragments/menu :: menu"></div>
+        <div class="content">
+            <div th:replace="fragments/error :: error"></div>
+            <h2>Report</h2>
+            <p>This report shows countries with the most and least amount of airports</p>
+            <div class="report-result" th:if="${country_info}" th:object="${country_info}">
+            </div>
+
+        </div>
+    </div>
+    <div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>
