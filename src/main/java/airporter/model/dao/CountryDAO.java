@@ -11,5 +11,7 @@ import java.util.List;
 public interface CountryDAO {
     Country getByCodeOrName(final String identification);
 
-    List<CountryAirportCount> findByAirportCount(int number);
+    List<CountryAirportCount> findByHighestAirportCount(int number);
+
+    List<CountryAirportCount> findByLowestAirportCount(int number);
 }

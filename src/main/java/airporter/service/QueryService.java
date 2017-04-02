@@ -12,5 +12,7 @@ import java.util.List;
 public interface QueryService {
     CountryAirports getCountryAirports(final String country) throws CountryNotFoundException;
 
-    List<CountryRunway> findCountriesWithTheMostAirports(final int number);
+    List<CountryRunway> findCountriesHighestAirportCount(final int number);
+
+    List<CountryRunway> findCountriesLowestAirportCount(final int number);
 }

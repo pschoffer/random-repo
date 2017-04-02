@@ -13,6 +13,7 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by pavel on 1.4.17.
@@ -39,20 +40,35 @@ public class CountryDAOImpl implements CountryDAO {
     }
 
     @Override
-    public List<CountryAirportCount> findByAirportCount(final int number) {
+    public List<CountryAirportCount> findByHighestAirportCount(final int number) {
         final Query namedQuery = entityManager.createNamedQuery(JPANamedQuery.SELECT_COUNTRIES_BY_AIRPORT_COUNT);
         namedQuery.setMaxResults(number);
 
         final List resultList = namedQuery.getResultList();
+        return convertResultSet(resultList);
+    }
+
+    @Override
+    public List<CountryAirportCount> findByLowestAirportCount(final int number) {
+        final Query namedQuery = entityManager.createNamedQuery(JPANamedQuery.SELECT_COUNTRIES_BY_LOW_AIRPORT_COUNT);
+        namedQuery.setMaxResults(number);
+
+        final List resultList = namedQuery.getResultList();
+        return convertResultSet(resultList);
+    }
+
+    private List<CountryAirportCount> convertResultSet(final List resultList) {
         final List<CountryAirportCount> countryAirportCounts = new ArrayList<>(resultList.size());
         for (final Object resultSet : resultList) {
             Object[] result = (Object[]) resultSet;
             final Country country = (Country) result[0];
-            final int count = (Integer) result[1];
+            Optional<Integer> countOptional = Optional.ofNullable((Integer) result[1]);
+            final int count = countOptional.orElse(0);
             countryAirportCounts.add(new CountryAirportCount(count,country));
         }
         return countryAirportCounts;
     }
+
 
 }
 

@@ -36,8 +36,17 @@ import javax.persistence.*;
                         "where country.code = airports.country " +
                         "order by airports.counter DESC, country.name",
                 resultSetMapping = "CountriesWithCount"
+        ),
+        @NamedNativeQuery(
+                name = JPANamedQuery.SELECT_COUNTRIES_BY_LOW_AIRPORT_COUNT,
+                query = "select country.*, airports.counter " +
+                        "from countries as country LEFT JOIN " +
+                        "     ( select iso_country as country, count(airports.id) counter " +
+                        "       from airports " +
+                        "       group by iso_country) as airports ON (country.code = airports.country) " +
+                        "order by airports.counter, country.name DESC",
+                resultSetMapping = "CountriesWithCount"
         )
-
 })
 public class Country {
     @Id

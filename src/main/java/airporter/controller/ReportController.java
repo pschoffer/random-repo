@@ -17,13 +17,18 @@ public class ReportController {
 
     private static final int NUMBER_OF_COUNTRIES = 10;
     private static final String TOP = "top";
+    private static final String BOTTOM = "bottom";
     @Autowired
     private QueryService queryService;
 
     @GetMapping("/report")
     public String queryForm(Model model) {
-        final List<CountryRunway> countriesWithTheMostAirports = queryService.findCountriesWithTheMostAirports(NUMBER_OF_COUNTRIES);
+        final List<CountryRunway> countriesWithTheMostAirports =
+                queryService.findCountriesHighestAirportCount(NUMBER_OF_COUNTRIES);
         model.addAttribute(TOP, countriesWithTheMostAirports);
+        final List<CountryRunway> countriesWithTheLeastAirports =
+                queryService.findCountriesLowestAirportCount(NUMBER_OF_COUNTRIES);
+        model.addAttribute(BOTTOM, countriesWithTheLeastAirports);
         return "report";
     }
 }

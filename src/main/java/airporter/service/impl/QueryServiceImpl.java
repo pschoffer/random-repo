@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -39,8 +40,19 @@ public class QueryServiceImpl implements QueryService {
     }
 
     @Override
-    public List<CountryRunway> findCountriesWithTheMostAirports(final int number) {
-        final List<CountryAirportCount> countryCounts = countryDAO.findByAirportCount(number);
+    public List<CountryRunway> findCountriesHighestAirportCount(final int number) {
+        final List<CountryAirportCount> countryCounts = countryDAO.findByHighestAirportCount(number);
+        return findCountryRunways(countryCounts);
+    }
+
+    @Override
+    public List<CountryRunway> findCountriesLowestAirportCount(final int number) {
+        final List<CountryAirportCount> countryCounts = countryDAO.findByLowestAirportCount(number);
+        Collections.reverse(countryCounts);
+        return findCountryRunways(countryCounts);
+    }
+
+    private List<CountryRunway> findCountryRunways(final List<CountryAirportCount> countryCounts) {
         final List<CountryRunway> countryRunways = new ArrayList<>();
 
         for (final CountryAirportCount countryCount : countryCounts) {

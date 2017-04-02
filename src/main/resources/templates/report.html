@@ -24,6 +24,16 @@
                     <td th:text="${country.country.name}" />
                     <td th:text="${country.airportCount}" />
                 </tr>
+                <tr>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                </tr>
+                <tr th:each="country, loopStat : ${bottom}">
+                    <td th:text="${loopStat.count}" />
+                    <td th:text="${country.country.name}" />
+                    <td th:text="${country.airportCount}" />
+                </tr>
             </table>
 
         </div>

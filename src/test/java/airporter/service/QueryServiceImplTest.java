@@ -75,10 +75,10 @@ public class QueryServiceImplTest {
         final Country expectedCountry = new Country();
         final CountryAirportCount countryCount = new CountryAirportCount(expectedCount, expectedCountry);
         final List<CountryAirportCount> countryCounts = Collections.singletonList(countryCount);
-        when(countryDAO.findByAirportCount(LIMIT)).thenReturn(countryCounts);
+        when(countryDAO.findByHighestAirportCount(LIMIT)).thenReturn(countryCounts);
 
         // execute
-        final List<CountryRunway> countriesWithTheMostAirports = service.findCountriesWithTheMostAirports(LIMIT);
+        final List<CountryRunway> countriesWithTheMostAirports = service.findCountriesHighestAirportCount(LIMIT);
 
         // assert
         Assert.assertEquals(countriesWithTheMostAirports.size(), countryCounts.size());
@@ -86,5 +86,24 @@ public class QueryServiceImplTest {
         Assert.assertEquals(countryRunway.getAirportCount(), expectedCount);
         Assert.assertEquals(countryRunway.getCountry(), expectedCountry);
         //TODO count runways
+    }
+
+    @Test
+    public void whenGettingLowest_OrderShouldBeReversed() throws Exception {
+        // prepare
+        final Country firstCountry = new Country();
+        final Country secondCountry = new Country();
+        final CountryAirportCount firstCountryCount = new CountryAirportCount(1, firstCountry);
+        final CountryAirportCount secondCountryCount = new CountryAirportCount(2, secondCountry);
+        final List<CountryAirportCount> countryCounts = Arrays.asList(firstCountryCount, secondCountryCount);
+        when(countryDAO.findByLowestAirportCount(LIMIT)).thenReturn(countryCounts);
+
+        // execute
+        final List<CountryRunway> countriesWithTheLowestAirports = service.findCountriesLowestAirportCount(LIMIT);
+
+        // assert
+        Assert.assertEquals(countriesWithTheLowestAirports.size(), countryCounts.size());
+        final CountryRunway firstReversedRunway = countriesWithTheLowestAirports.get(0);
+        Assert.assertEquals(firstReversedRunway.getCountry(), secondCountry);
     }
 }

@@ -84,7 +84,7 @@ public class CountryDAOImplTest {
         when(query.getResultList()).thenReturn(dbResult);
 
         // execute
-        final List<CountryAirportCount> airportCounts = dao.findByAirportCount(LIMIT);
+        final List<CountryAirportCount> airportCounts = dao.findByHighestAirportCount(LIMIT);
 
         // assert
         Assert.assertEquals(airportCounts.size(), dbResult.size());
