@@ -12,7 +12,7 @@ import javax.persistence.*;
 @NamedQueries({
         @NamedQuery(
                 name = JPANamedQuery.SELECT_COUNTRY_BY_NAME,
-                query = "from Country where lower(name) = lower(:name)"
+                query = "from Country where lower(name) like lower(concat('%', :name, '%'))"
         ),
         @NamedQuery(
                 name = JPANamedQuery.SELECT_COUNTRY_BY_CODE,
